@@ -4,8 +4,6 @@ Full-funnel PLG execution for a fictional HIPAA-compliant healthcare workflow pl
 
 North-star KPI: **Revenue per Visitor** (conversion rate x ACV x PLG-driven expansion).
 
-**[Marketing Website - Live Demo](https://joleneann.github.io/healthcare-plg/)** | **[Signup Flow - Live Demo](https://joleneann.github.io/healthcare-plg/signup-flow.html)**
-
 ---
 
 ## The Problem
