@@ -30,31 +30,13 @@ Top-of-funnel conversion page demonstrating:
 **[Live demo](https://joleneann.github.io/healthcare-plg/signup-flow.html)**
 
 6-screen self-serve activation journey demonstrating:
-- **Screen 1 - Choose:** JTBD problem selection routes users to recommended product module
+- **Screen 1 - Choose:** Routes users to recommended product module
 - **Screen 2 - Try:** Persistent product sidebar with sandbox + video layout per module
 - **Screen 3 - Sign Up:** Post-value email gate with SSO (Google/Microsoft) for enterprise detection
 - **Screen 4 - Profile:** Progressive 5-question segmentation (industry, role, team size, title, attribution) - all visible on one screen
 - **Screen 5 - Dashboard:** Personalized next steps, Docflow Products cross-sell sidebar, social proof
 - Inline PLG strategy annotations on every screen ("Strategy Notes" toggle)
 
-### 3. Product Dashboard
-**[Live demo](https://joleneann.github.io/healthcare-plg/dashboard.html)**
-
-Post-activation retention and expansion surface.
-
----
-
-## Methodology
-
-- **Competitive research:** mapped gaps across cloud fax, document processing, and unified comms categories
-- **CXL landing page optimization:** applied to hero, social proof, and CTA architecture
-- **Jobs-to-be-Done segmentation:** segmentation questions routed to high-fit module recommendations
-- **Sandbox-first activation:** users see a sandbox and video before giving work email
-- **Post-value monetization:** work-email gate and upgrade nudges appear after the "aha moment"
-- **Role-based value props:** Ops, Compliance, IT, Front Desk each get a tailored pitch
-- **Persistent product sidebar:** cross-sell discovery built into every "Try" screen
-
----
 
 ## Stack
 
