@@ -1,0 +1,14 @@
+{
+  "name": "docflow-plg-case-study",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "serve": "node serve.mjs",
+    "screenshot": "node screenshot.mjs"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.16",
+    "docx": "^9.6.1",
+    "puppeteer": "^24.40.0"
+  }
+}
