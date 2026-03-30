@@ -30,10 +30,10 @@
     @keyframes fadeSlideIn{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
 
     .seg-block{opacity:0;max-height:0;overflow:hidden;transition:opacity 0.45s ease,max-height 0.55s cubic-bezier(0.34,1.2,0.64,1),margin 0.45s ease;margin-top:0;}
-    .seg-block.revealed{opacity:1;max-height:260px;margin-top:24px;}
+    .seg-block.revealed{opacity:1;max-height:260px;margin-top:14px;}
     .seg-question{opacity:0;max-height:0;overflow:hidden;transition:opacity 0.4s ease,max-height 0.5s cubic-bezier(0.34,1.2,0.64,1);}
     .seg-question.revealed{opacity:1;max-height:200px;}
-    .seg-pill-e{padding:10px 18px;border-radius:12px;font-size:14px;font-weight:500;border:1.5px solid rgba(200,195,185,0.4);background:#fff;color:#0B0F1A;cursor:pointer;transition:transform 0.2s cubic-bezier(0.34,1.2,0.64,1),border-color 0.2s ease,background 0.2s ease,box-shadow 0.2s ease;box-shadow:0 1px 3px rgba(0,0,0,0.04);}
+    .seg-pill-e{padding:6px 14px;border-radius:10px;font-size:13px;font-weight:500;border:1.5px solid rgba(200,195,185,0.4);background:#fff;color:#0B0F1A;cursor:pointer;transition:transform 0.2s cubic-bezier(0.34,1.2,0.64,1),border-color 0.2s ease,background 0.2s ease,box-shadow 0.2s ease;box-shadow:0 1px 3px rgba(0,0,0,0.04);}
     .seg-pill-e:hover{border-color:rgba(15,111,222,0.35);background:rgba(15,111,222,0.04);transform:translateY(-1px);box-shadow:0 3px 8px rgba(15,111,222,0.08);}
     .seg-pill-e:active{transform:scale(0.97);}
     .seg-pill-e.selected{background:#0F6FDE;color:#fff;border-color:#0F6FDE;box-shadow:0 0 0 3px rgba(15,111,222,0.15),0 4px 12px rgba(15,111,222,0.25);transform:translateY(-1px);}
@@ -63,9 +63,13 @@
     .mod-tab.recommended .rec-badge{display:inline-block;}
 
     /* Module tabs */
-    .mod-tab{transition:background-color 0.2s ease,border-color 0.2s ease,color 0.2s ease;border-left:3px solid transparent;cursor:pointer;}
-    .mod-tab:hover{background:rgba(15,111,222,0.03);border-left-color:rgba(15,111,222,0.3);}
-    .mod-tab.active{background:rgba(15,111,222,0.06);border-left-color:#0F6FDE;color:#0F6FDE;font-weight:600;}
+    .mod-tab{transition:background-color 0.2s ease,border-color 0.2s ease,color 0.2s ease,transform 0.2s ease;border-left:3px solid transparent;cursor:pointer;}
+    .mod-tab:hover{background:#0F6FDE;border-left-color:#0F6FDE;transform:translateY(-1px);}
+    .mod-tab:hover span,.mod-tab:hover svg{color:white !important;}
+    .mod-tab:active{transform:scale(0.98);}
+    .mod-tab.active{background:#0F6FDE;border-left-color:#0F6FDE;color:white;font-weight:600;}
+    .mod-tab.active span,.mod-tab.active svg{color:white !important;}
+    .plat-row:hover span{color:white !important;}
 
     /* Preview transition */
     .preview-panel{display:none;opacity:0;transform:translateY(6px);}
@@ -127,32 +131,32 @@
   <div class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-border">
     <div class="max-w-[1200px] mx-auto px-6 py-2.5 flex items-center justify-between">
       <div class="flex items-center gap-4">
-        <span class="text-[10px] font-mono text-purple-core uppercase tracking-[0.15em] font-semibold">PLG Signup Flow</span>
+        <span class="text-[10px] font-body text-purple-core uppercase tracking-[0.15em] font-semibold">PLG Signup Flow</span>
         <div class="w-px h-4 bg-border"></div>
         <div class="stepper" id="stepper-nav">
           <div class="step-item active" onclick="goToScreen(1)" data-step="1">
             <div class="step-circle active">1</div>
+            <span class="step-label">Choose</span>
+          </div>
+          <svg class="step-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="step-item" onclick="goToScreen(3)" data-step="2">
+            <div class="step-circle">2</div>
+            <span class="step-label">Try</span>
+          </div>
+          <svg class="step-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="step-item" onclick="goToScreen(6)" data-step="3">
+            <div class="step-circle">3</div>
             <span class="step-label">Sign Up</span>
           </div>
           <svg class="step-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <div class="step-item" onclick="goToScreen(2)" data-step="2">
-            <div class="step-circle">2</div>
-            <span class="step-label">Your Work</span>
-          </div>
-          <svg class="step-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <div class="step-item" onclick="goToScreen(3)" data-step="3">
-            <div class="step-circle">3</div>
-            <span class="step-label">Try Docflow</span>
-          </div>
-          <svg class="step-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <div class="step-item" onclick="goToScreen(4)" data-step="4">
+          <div class="step-item" onclick="goToScreen(2)" data-step="4">
             <div class="step-circle">4</div>
-            <span class="step-label">Sandbox</span>
+            <span class="step-label">Profile</span>
           </div>
           <svg class="step-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <div class="step-item" onclick="goToScreen(5)" data-step="5">
             <div class="step-circle">5</div>
-            <span class="step-label">Explore</span>
+            <span class="step-label">Dashboard</span>
           </div>
         </div>
       </div>
@@ -164,53 +168,53 @@
 
   <div class="pt-[56px] min-h-screen flex flex-col">
 
-    <!-- ===== SCREEN 1: SIGN UP ===== -->
+    <!-- ===== SCREEN 1: CHOOSE ===== -->
     <div id="screen-1" class="screen-panel active flex-1 flex-col items-center justify-center px-4 py-16">
-      <div class="w-full max-w-[1000px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative">
-        <!-- Left: value prop -->
-        <div class="hidden lg:block relative">
-          <div class="absolute -top-20 -left-20 w-[400px] h-[400px] rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(15,111,222,0.1) 0%,transparent 65%);"></div>
-          <div class="relative z-10">
-            <svg class="h-8 mb-8" viewBox="0 0 140 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="4" width="20" height="20" rx="4" fill="#0F6FDE"/><path d="M6 11l4 4 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 15V9" stroke="white" stroke-width="2" stroke-linecap="round"/><text x="26" y="20" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="18" fill="#0B0F1A">Docflow</text></svg>
-            <h1 class="font-display text-5xl font-semibold text-text-primary leading-[1.1]" style="letter-spacing:-0.04em;">Every document handled. Every workflow, automated.</h1>
-            <p class="text-lg text-text-secondary mt-5 leading-relaxed max-w-md">Fax, e-signature, secure messaging, and AI document processing, unified in one HIPAA-compliant system. Because documents are just the beginning of the work.</p>
-            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-floating border border-border mt-8">
-              <svg class="w-3.5 h-3.5 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
-              <span class="text-xs font-medium text-text-secondary">No credit card required</span>
-            </div>
-          </div>
+      <div class="w-full max-w-[1100px] mx-auto text-center">
+        <svg class="h-8 mx-auto mb-8" viewBox="0 0 155 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="4" width="24" height="24" rx="5" fill="#0F6FDE"/><path d="M7 13l5 5 5-5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 18V11" stroke="white" stroke-width="2.2" stroke-linecap="round"/><text x="30" y="23" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="21" fill="#0B0F1A">Docflow</text></svg>
+        <h1 class="font-display text-4xl md:text-5xl font-semibold text-text-primary leading-[1.1] mb-4" style="letter-spacing:-0.04em;">What would you like to try first?</h1>
+        <p class="text-lg text-text-secondary mb-6">No account required. Pick one Docflow capability and try it now</p>
+
+        <style>.cap-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;}.cap-card{display:grid;grid-template-rows:subgrid;grid-row:span 3;min-width:0;}</style>
+        <div class="cap-grid mb-6 max-w-[1100px] mx-auto" style="grid-template-rows:auto auto auto;">
+          <!-- eFax -->
+          <button onclick="S.mod='fax';S.path='direct';goToScreen(4)" class="cap-card group rounded-2xl border border-border px-4 py-8 text-center bg-white hover:bg-purple-core hover:border-purple-core transition-colors duration-200 cursor-pointer">
+            <div class="flex justify-center"><div class="w-14 h-14 rounded-2xl bg-purple-core group-hover:bg-white flex items-center justify-center transition-colors duration-200"><svg class="w-7 h-7 text-white group-hover:text-purple-core transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div></div>
+            <h3 class="font-display text-sm font-semibold text-text-primary group-hover:text-white transition-colors duration-200 mt-4 self-center">eFax</h3>
+            <p class="text-xs text-text-secondary group-hover:text-white/80 leading-relaxed transition-colors duration-200 mt-1 self-start">Send, receive, and route digital faxes</p>
+          </button>
+          <!-- Document Processing -->
+          <button onclick="S.mod='automate';S.path='direct';goToScreen(4)" class="cap-card group rounded-2xl border border-border px-4 py-8 text-center bg-white hover:bg-purple-core hover:border-purple-core transition-colors duration-200 cursor-pointer">
+            <div class="flex justify-center"><div class="w-14 h-14 rounded-2xl bg-purple-core group-hover:bg-white flex items-center justify-center transition-colors duration-200"><svg class="w-7 h-7 text-white group-hover:text-purple-core transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg></div></div>
+            <h3 class="font-display text-sm font-semibold text-text-primary group-hover:text-white transition-colors duration-200 mt-4 self-center">Document Processing</h3>
+            <p class="text-xs text-text-secondary group-hover:text-white/80 leading-relaxed transition-colors duration-200 mt-1 self-start">AI classifies and routes documents</p>
+          </button>
+          <!-- Secure Communications -->
+          <button onclick="S.mod='engage';S.path='direct';goToScreen(4)" class="cap-card group rounded-2xl border border-border px-4 py-8 text-center bg-white hover:bg-purple-core hover:border-purple-core transition-colors duration-200 cursor-pointer">
+            <div class="flex justify-center"><div class="w-14 h-14 rounded-2xl bg-purple-core group-hover:bg-white flex items-center justify-center transition-colors duration-200"><svg class="w-7 h-7 text-white group-hover:text-purple-core transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg></div></div>
+            <h3 class="font-display text-sm font-semibold text-text-primary group-hover:text-white transition-colors duration-200 mt-4 self-center">Secure Communications</h3>
+            <p class="text-xs text-text-secondary group-hover:text-white/80 leading-relaxed transition-colors duration-200 mt-1 self-start">Encrypted messaging with audit trails</p>
+          </button>
+          <!-- eSign -->
+          <button onclick="S.mod='signature';S.path='direct';goToScreen(4)" class="cap-card group rounded-2xl border border-border px-4 py-8 text-center bg-white hover:bg-purple-core hover:border-purple-core transition-colors duration-200 cursor-pointer">
+            <div class="flex justify-center"><div class="w-14 h-14 rounded-2xl bg-purple-core group-hover:bg-white flex items-center justify-center transition-colors duration-200"><svg class="w-7 h-7 text-white group-hover:text-purple-core transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg></div></div>
+            <h3 class="font-display text-sm font-semibold text-text-primary group-hover:text-white transition-colors duration-200 mt-4 self-center">eSign</h3>
+            <p class="text-xs text-text-secondary group-hover:text-white/80 leading-relaxed transition-colors duration-200 mt-1 self-start">Digital signatures and form collection</p>
+          </button>
         </div>
-        <!-- Right: signup form -->
-        <div class="w-full max-w-[420px] mx-auto lg:mx-0">
-          <div class="lg:hidden text-center mb-8">
-            <svg class="h-7 mx-auto mb-5" viewBox="0 0 140 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="4" width="20" height="20" rx="4" fill="#0F6FDE"/><path d="M6 11l4 4 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 15V9" stroke="white" stroke-width="2" stroke-linecap="round"/><text x="26" y="20" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="18" fill="#0B0F1A">Docflow</text></svg>
-            <h1 class="font-display text-3xl font-semibold text-text-primary leading-tight" style="letter-spacing:-0.03em;">Start your free trial</h1>
-          </div>
-          <div class="glass-card rounded-2xl border border-border card-shadow-lg p-10">
-            <h2 class="hidden lg:block font-display text-2xl font-semibold text-text-primary mb-6" style="letter-spacing:-0.02em;">Start your free trial</h2>
-            <div class="flex gap-3">
-              <button class="flex-1 flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl border border-border bg-white hover:bg-base transition-colors duration-200 active:scale-[0.97]"><svg class="w-5 h-5" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg><span class="text-sm font-medium text-text-primary">Google</span></button>
-              <button class="flex-1 flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl border border-border bg-white hover:bg-base transition-colors duration-200 active:scale-[0.97]"><svg class="w-5 h-5" viewBox="0 0 24 24"><path fill="#00A4EF" d="M11.4 24H0V12.6h11.4V24z"/><path fill="#FFB900" d="M11.4 11.4H0V0h11.4v11.4z"/><path fill="#F25022" d="M24 11.4H12.6V0H24v11.4z"/><path fill="#7FBA00" d="M24 24H12.6V12.6H24V24z"/></svg><span class="text-sm font-medium text-text-primary">Microsoft</span></button>
-            </div>
-            <div class="flex items-center gap-3 my-6"><div class="flex-1 h-px bg-border"></div><span class="text-xs text-text-muted">or continue with email</span><div class="flex-1 h-px bg-border"></div></div>
-            <div class="space-y-4">
-              <div><label for="nameInput" class="block text-sm font-medium text-text-primary mb-1.5">Full name</label><input id="nameInput" type="text" autocomplete="name" autofocus placeholder="Jane Smith" class="form-input w-full px-4 py-3.5 rounded-xl border border-border bg-white text-sm text-text-primary placeholder:text-text-muted transition-colors duration-200"/></div>
-              <div><label for="emailInput" class="block text-sm font-medium text-text-primary mb-1.5">Email</label><input id="emailInput" type="email" autocomplete="email" placeholder="you@yourclinic.com" class="form-input w-full px-4 py-3.5 rounded-xl border border-border bg-white text-sm text-text-primary placeholder:text-text-muted transition-colors duration-200"/></div>
-              <div><label for="passwordInput" class="block text-sm font-medium text-text-primary mb-1.5">Password</label><input type="password" id="passwordInput" autocomplete="new-password" oninput="updatePwStr()" placeholder="Create a password" class="form-input w-full px-4 py-3.5 rounded-xl border border-border bg-white text-sm text-text-primary placeholder:text-text-muted transition-colors duration-200"/><div class="flex gap-1 mt-2"><div id="str1" class="strength-bar h-1 rounded-full bg-floating flex-1"></div><div id="str2" class="strength-bar h-1 rounded-full bg-floating flex-1"></div><div id="str3" class="strength-bar h-1 rounded-full bg-floating flex-1"></div><div id="str4" class="strength-bar h-1 rounded-full bg-floating flex-1"></div></div><p id="strTxt" class="text-[11px] text-text-muted mt-1"></p></div>
-            </div>
-            <button id="signupBtn" onclick="handleSignup()" class="btn-shimmer w-full mt-7 px-6 py-4 rounded-xl bg-purple-core text-white text-sm font-semibold active:scale-[0.97]" style="box-shadow:0 4px 16px rgba(15,111,222,0.4);">Get Started Free</button>
-            <p class="text-center text-[11px] text-text-muted mt-4">By signing up, you agree to our <a href="#" class="text-purple-core hover:opacity-80">Terms of Service</a> and <a href="#" class="text-purple-core hover:opacity-80">Privacy Policy</a>.</p>
-            <div class="flex items-center justify-center gap-4 mt-4">
-              <span class="inline-flex items-center gap-1 text-[10px] text-text-muted"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>HIPAA</span>
-              <span class="inline-flex items-center gap-1 text-[10px] text-text-muted"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>SOC 2</span>
-              <span class="inline-flex items-center gap-1 text-[10px] text-text-muted"><svg class="w-3 h-3 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>4.8/5 on G2</span>
-            </div>
-            <p class="text-center text-sm text-text-secondary mt-5">Already have an account? <a href="#" class="text-purple-core font-medium hover:opacity-80">Sign in</a></p>
-          </div>
-          <p class="text-center text-xs text-text-muted mt-4">Enterprise? <a href="#" class="text-purple-core hover:opacity-80">Talk to our team</a></p>
+
+        <p class="text-center mt-2"><a onclick="S.path='explore';S._s3mod='fax';goToScreen(3)" class="text-sm text-purple-core underline hover:opacity-80 cursor-pointer transition-opacity duration-200">or explore the platform first</a></p>
+
+        <div class="flex items-center justify-center gap-1.5 mt-8 text-xs font-medium text-text-muted">
+          <span class="flex items-center gap-1.5">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            4.8/5 from 7,253 G2 reviews
+          </span>
+          <span class="text-text-muted/40 mx-2">|</span>
+          <span>HIPAA, SOC 2 &amp; ISO 27001 compliant</span>
         </div>
       </div>
-      <div class="strategy-tip max-w-[1000px] mx-auto mt-10"><div class="tip-content"><div class="tip-label">PLG Strategy: Signup</div><p><strong>Split layout</strong> gives the form breathing room while the left side sells with social proof (G2 4.8/5) and compliance trust signals. <strong>Personal email accepted</strong> , work email is captured post-activation (Screen 4), not here. Requiring work email at signup loses individual practitioners and small clinics. Conversion to work email is <strong>3x higher</strong> after the user has experienced value. <strong>SSO buttons</strong> (Google/Microsoft) serve dual purpose: convenience + enterprise detection. A @largeclinic.org Microsoft login is a PQL signal for sales-assist.</p></div></div>
+      <div class="strategy-tip max-w-[600px] mx-auto mt-10"><div class="tip-content"><div class="tip-label">PLG Strategy: Ungated Value</div><p><strong>Zero friction entry</strong> - no email, no form, no signup. Users pick what they want to try and go straight to a sandbox. This reflects how modern users (conditioned by AI tools) expect ungated value before committing personal information. <strong>Self-selection routing</strong> lets users declare intent, which powers downstream personalization without asking profiling questions upfront. The "Explore" option catches users who aren't sure what they need yet.</p></div></div>
     </div>
 
     <!-- ===== SCREEN 2: YOUR WORK ===== -->
@@ -224,31 +228,30 @@
       </div>
     </div>
 
-    <div id="screen-2" class="screen-panel flex-1 flex-col items-center px-4 py-16">
+    <div id="screen-2" class="screen-panel flex-1 flex-col items-center px-4 py-3">
       <div class="w-full max-w-[480px] mx-auto">
-        <div class="text-center mb-8">
-          <svg class="h-6 mx-auto mb-5" viewBox="0 0 140 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="4" width="20" height="20" rx="4" fill="#0F6FDE"/><path d="M6 11l4 4 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 15V9" stroke="white" stroke-width="2" stroke-linecap="round"/><text x="26" y="20" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="18" fill="#0B0F1A">Docflow</text></svg>
-          <h1 class="font-display text-3xl font-semibold text-text-primary leading-tight" style="letter-spacing:-0.04em;">Let's set up your experience</h1>
-          <p class="text-sm text-text-secondary mt-2 leading-relaxed">Four quick taps. We'll tailor everything to you.</p>
-          <!-- Inline progress bar (scrolls away, then fixed bar takes over) -->
-          <div id="seg-inline-progress" class="flex gap-1.5 w-full max-w-[220px] mx-auto mt-5" role="progressbar" aria-label="Segmentation progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="4">
+        <div class="text-center mb-3">
+          <svg class="h-5 mx-auto mb-2" viewBox="0 0 140 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="4" width="20" height="20" rx="4" fill="#0F6FDE"/><path d="M6 11l4 4 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 15V9" stroke="white" stroke-width="2" stroke-linecap="round"/><text x="26" y="20" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="18" fill="#0B0F1A">Docflow</text></svg>
+          <h1 class="font-display text-lg font-semibold text-text-primary leading-tight" style="letter-spacing:-0.03em;">Let's set up your experience</h1>
+          <p class="text-xs text-text-secondary mt-1">A few quick taps to tailor everything to you</p>
+          <div id="seg-inline-progress" class="flex gap-1.5 w-full max-w-[200px] mx-auto mt-2" role="progressbar" aria-label="Segmentation progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="4">
             <div class="seg-progress-seg" data-seg-prog="industry"><div class="fill"></div></div>
             <div class="seg-progress-seg" data-seg-prog="role"><div class="fill"></div></div>
             <div class="seg-progress-seg" data-seg-prog="size"><div class="fill"></div></div>
             <div class="seg-progress-seg" data-seg-prog="title"><div class="fill"></div></div>
+            <div class="seg-progress-seg" data-seg-prog="hdyhau"><div class="fill"></div></div>
           </div>
-          <p id="seg-progress-label" class="text-[11px] text-text-muted mt-2 transition-opacity duration-300"></p>
+          <p id="seg-progress-label" class="text-[11px] text-text-muted mt-1 transition-opacity duration-300"></p>
         </div>
 
-        <!-- Skip link always visible -->
-        <div class="text-center mb-6">
-          <button onclick="goToScreen(3)" class="text-sm text-text-muted hover:text-text-secondary transition-colors duration-200">Skip for now</button>
+        <div class="text-center mb-2">
+          <button onclick="goToScreen(5)" class="text-xs text-text-muted hover:text-text-secondary transition-colors duration-200">Skip for now</button>
         </div>
 
         <!-- Q1: Industry (always visible) -->
         <div id="seg-block-industry">
-          <p class="font-display text-[16px] font-semibold text-text-primary mb-1" style="letter-spacing:-0.02em;">What field are you in?</p>
-          <p class="text-xs text-text-muted mb-3">Unlocks industry-specific templates and compliance presets</p>
+          <p class="font-display text-sm font-semibold text-text-primary mb-0.5" style="letter-spacing:-0.02em;">What field are you in?</p>
+          <p class="text-[11px] text-text-muted mb-1.5">Unlocks industry-specific templates and compliance presets</p>
           <div class="flex flex-wrap gap-2" id="seg-industry-pills" role="radiogroup" aria-label="Select your industry">
             <button onclick="segPill('industry','healthcare',this)" class="seg-pill seg-pill-e">Healthcare</button>
             <button onclick="segPill('industry','legal',this)" class="seg-pill seg-pill-e">Legal</button>
@@ -259,15 +262,15 @@
 
         <!-- Q2: Role (cascades after industry) -->
         <div id="seg-role-section" class="seg-block" data-seg-block="role">
-          <p class="font-display text-[16px] font-semibold text-text-primary mb-1" style="letter-spacing:-0.02em;">What best describes your role?</p>
-          <p class="text-xs text-text-muted mb-3">Your dashboard and recommended workflows adjust to match</p>
+          <p class="font-display text-sm font-semibold text-text-primary mb-0.5" style="letter-spacing:-0.02em;">What best describes your role?</p>
+          <p class="text-[11px] text-text-muted mb-1.5">Your dashboard and recommended workflows adjust to match</p>
           <div class="flex flex-wrap gap-2" id="seg-role-pills" role="radiogroup" aria-label="Select your role"></div>
         </div>
 
         <!-- Q3: Team size (cascades after role) -->
         <div id="seg-block-size" class="seg-block" data-seg-block="size">
-          <p class="font-display text-[16px] font-semibold text-text-primary mb-1" style="letter-spacing:-0.02em;">How big is your team?</p>
-          <p class="text-xs text-text-muted mb-3">We'll pre-configure the right collaboration features and plan</p>
+          <p class="font-display text-sm font-semibold text-text-primary mb-0.5" style="letter-spacing:-0.02em;">How big is your team?</p>
+          <p class="text-[11px] text-text-muted mb-1.5">We'll pre-configure the right collaboration features and plan</p>
           <div class="flex flex-wrap gap-2" id="seg-size-pills" role="radiogroup" aria-label="Select your team size">
             <button onclick="segPill('size','solo',this)" class="seg-pill seg-pill-e">Just me</button>
             <button onclick="segPill('size','2-19',this)" class="seg-pill seg-pill-e">2 &#x2013; 19</button>
@@ -280,8 +283,8 @@
 
         <!-- Q4: Title (cascades after size) -->
         <div id="seg-block-title" class="seg-block" data-seg-block="title">
-          <p class="font-display text-[16px] font-semibold text-text-primary mb-1" style="letter-spacing:-0.02em;">What level best fits?</p>
-          <p class="text-xs text-text-muted mb-3">Shapes your onboarding — admin setup vs. daily user workflows</p>
+          <p class="font-display text-sm font-semibold text-text-primary mb-0.5" style="letter-spacing:-0.02em;">What level best fits?</p>
+          <p class="text-[11px] text-text-muted mb-1.5">Shapes your onboarding — admin setup vs. daily user workflows</p>
           <div class="flex flex-wrap gap-2">
             <button onclick="segPill('title','executive',this)" class="seg-pill seg-pill-e">Executive</button>
             <button onclick="segPill('title','director',this)" class="seg-pill seg-pill-e">Director</button>
@@ -291,412 +294,135 @@
           </div>
         </div>
 
-        <!-- Continue button (revealed after enough answers) -->
-        <div id="seg-continue-wrap" class="mt-8">
-          <p class="text-sm font-medium text-purple-core mb-3 text-center" style="animation:fadeSlideIn 0.45s ease forwards;">Your personalized setup is ready</p>
-          <button onclick="goToScreen(3)" class="btn-shimmer w-full px-6 py-4 rounded-xl bg-purple-core text-white text-sm font-semibold active:scale-[0.97]" style="box-shadow:0 4px 16px rgba(15,111,222,0.4);">Show me my setup</button>
+        <!-- Q5: How did you hear about us (both paths) -->
+        <div id="seg-block-hdyhau" class="seg-block" data-seg-block="hdyhau">
+          <p class="font-display text-sm font-semibold text-text-primary mb-0.5" style="letter-spacing:-0.02em;">How did you hear about us?</p>
+          <p class="text-[11px] text-text-muted mb-1.5">Helps us understand what's working</p>
+          <div class="flex flex-wrap gap-2" role="radiogroup" aria-label="How did you hear about us">
+            <button onclick="segPill('hdyhau','search',this)" class="seg-pill seg-pill-e">Search</button>
+            <button onclick="segPill('hdyhau','g2',this)" class="seg-pill seg-pill-e">G2</button>
+            <button onclick="segPill('hdyhau','colleague',this)" class="seg-pill seg-pill-e">Colleague</button>
+            <button onclick="segPill('hdyhau','event',this)" class="seg-pill seg-pill-e">Event</button>
+            <button onclick="segPill('hdyhau','social',this)" class="seg-pill seg-pill-e">Social</button>
+          </div>
         </div>
 
-        <div class="strategy-tip mt-8"><div class="tip-content"><div class="tip-label">PLG Strategy: Segmentation</div><p><strong>Progressive reveal</strong> shows one question at a time as pills. Research: multi-step/cascading flows convert 86% higher (HubSpot) and reduce completion time by 20-40% (NNGroup). <strong>Industry + Role</strong> power module recommendation. <strong>Company size + Title</strong> power PQL scoring. <strong>"How did you find us?"</strong> kept in the main cascade as Q5 to close the attribution loop for marketing ROI.</p></div></div>
+        <!-- Continue button -->
+        <div id="seg-continue-wrap" class="mt-4">
+          <button onclick="goToScreen(5)" class="btn-shimmer w-full px-6 py-3 rounded-xl bg-purple-core text-white text-sm font-semibold active:scale-[0.97]" style="box-shadow:0 4px 16px rgba(15,111,222,0.4);">Go to my dashboard</button>
+        </div>
+
+        <div class="strategy-tip mt-4"><div class="tip-content"><div class="tip-label">PLG Strategy: Segmentation</div><p><strong>Progressive reveal</strong> shows one question at a time as pills. Research: multi-step/cascading flows convert 86% higher (HubSpot) and reduce completion time by 20-40% (NNGroup). <strong>Industry + Role</strong> power module recommendation. <strong>Company size + Title</strong> power PQL scoring. <strong>"How did you find us?"</strong> kept in the main cascade as Q5 to close the attribution loop for marketing ROI.</p></div></div>
       </div>
     </div>
 
     <!-- ===== SCREEN 3: TRY AMPLIFY (Tabs + Preview) ===== -->
     <div id="screen-3" class="screen-panel flex-1 flex-col items-center px-4 py-8 relative dot-pattern">
       <div class="w-full max-w-[960px] mx-auto relative z-10">
-        <div class="text-center mb-4">
-          <h1 class="font-display text-3xl font-semibold text-text-primary leading-tight" style="letter-spacing:-0.04em;">What workflow do you want to improve?</h1>
-          <p class="text-sm text-text-secondary mt-1.5 leading-relaxed">Pick your starting point. You can explore everything during your trial.</p>
-        </div>
-
-        <!-- JTBD routing pills -->
-        <div class="flex flex-wrap justify-center gap-2.5 mb-6" id="jtbd-pills" role="radiogroup" aria-label="Select your workflow">
-          <button onclick="jtbdSelect('fax',this)" class="jtbd-pill px-5 py-3 rounded-xl text-sm font-medium border border-border bg-white hover:border-purple-core/30 hover:bg-purple-subtle/30 transition-all duration-200 cursor-pointer active:scale-95">Send &amp; receive docs</button>
-          <button onclick="jtbdSelect('signature',this)" class="jtbd-pill px-5 py-3 rounded-xl text-sm font-medium border border-border bg-white hover:border-purple-core/30 hover:bg-purple-subtle/30 transition-all duration-200 cursor-pointer active:scale-95">Collect signatures</button>
-          <button onclick="jtbdSelect('automate',this)" class="jtbd-pill px-5 py-3 rounded-xl text-sm font-medium border border-border bg-white hover:border-purple-core/30 hover:bg-purple-subtle/30 transition-all duration-200 cursor-pointer active:scale-95">Automate processing</button>
-          <button onclick="jtbdSelect('engage',this)" class="jtbd-pill px-5 py-3 rounded-xl text-sm font-medium border border-border bg-white hover:border-purple-core/30 hover:bg-purple-subtle/30 transition-all duration-200 cursor-pointer active:scale-95">Message securely</button>
-          <button onclick="jtbdSelect('collect',this)" class="jtbd-pill px-5 py-3 rounded-xl text-sm font-medium border border-border bg-white hover:border-purple-core/30 hover:bg-purple-subtle/30 transition-all duration-200 cursor-pointer active:scale-95">Patient intake</button>
-          <button onclick="jtbdSelect('api',this)" class="jtbd-pill px-5 py-3 rounded-xl text-sm font-medium border border-border bg-white hover:border-purple-core/30 hover:bg-purple-subtle/30 transition-all duration-200 cursor-pointer active:scale-95">API</button>
-        </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-6">
           <!-- Left: module tabs -->
-          <div class="flex lg:flex-col gap-1 bg-white/60 backdrop-blur-sm rounded-2xl border border-border card-shadow p-2" role="tablist" aria-label="Product modules">
-            <div onclick="switchPreview('fax')" data-mod-tab="fax" role="tab" aria-selected="true" tabindex="0" class="mod-tab active flex items-start gap-3 px-4 py-3.5 rounded-xl">
-              <svg class="w-5 h-5 flex-shrink-0 mt-0.5" style="color:#0F6FDE" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-              <div class="flex flex-col"><span class="text-sm">Fax</span><span class="text-[10px] text-text-muted leading-tight">2,400+ clinics</span><span class="rec-badge">&#10022; Recommended</span></div>
+          <div class="flex lg:flex-col gap-2 bg-white/60 backdrop-blur-sm rounded-2xl border border-border card-shadow p-3" role="tablist" aria-label="Product modules">
+            <div class="flex flex-col items-center gap-0.5 px-4 pt-4 pb-3 mb-1">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none"><rect x="0" y="0" width="24" height="24" rx="5" fill="#0F6FDE"/><path d="M7 11l5 5 5-5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 16V9" stroke="white" stroke-width="2.2" stroke-linecap="round"/></svg>
+              <span class="font-display text-sm font-bold text-text-primary text-center" style="letter-spacing:-0.02em;">Docflow<br>Products</span>
             </div>
-            <div onclick="switchPreview('signature')" data-mod-tab="signature" role="tab" aria-selected="false" tabindex="-1" class="mod-tab flex items-start gap-3 px-4 py-3.5 rounded-xl">
-              <svg class="w-5 h-5 flex-shrink-0 mt-0.5" style="color:#7C3AED" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
-              <div class="flex flex-col"><span class="text-sm">E-Signature</span><span class="text-[10px] text-text-muted leading-tight">1.2M docs signed</span><span class="rec-badge">&#10022; Recommended</span></div>
+            <div onclick="switchPreview('fax')" data-mod-tab="fax" role="tab" aria-selected="true" tabindex="0" class="mod-tab active flex items-center gap-3 px-4 py-3 rounded-xl">
+              <svg class="w-5 h-5 flex-shrink-0" style="color:#0F6FDE" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              <div class="flex flex-col"><span class="text-sm font-medium">eFax</span><span class="text-[10px] text-text-muted leading-tight">2,400+ clinics</span><span class="rec-badge">&#10022; Recommended</span></div>
             </div>
-            <div onclick="switchPreview('automate')" data-mod-tab="automate" role="tab" aria-selected="false" tabindex="-1" class="mod-tab flex items-start gap-3 px-4 py-3.5 rounded-xl">
-              <svg class="w-5 h-5 flex-shrink-0 mt-0.5" style="color:#6366F1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-              <div class="flex flex-col"><span class="text-sm">Automate</span><span class="text-[10px] text-text-muted leading-tight">Fastest growing</span><span class="rec-badge">&#10022; Recommended</span></div>
+            <div onclick="switchPreview('automate')" data-mod-tab="automate" role="tab" aria-selected="false" tabindex="-1" class="mod-tab flex items-center gap-3 px-4 py-3 rounded-xl">
+              <svg class="w-5 h-5 flex-shrink-0" style="color:#6366F1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+              <div class="flex flex-col"><span class="text-sm font-medium">Document Processing</span><span class="text-[10px] text-text-muted leading-tight">Fastest growing</span><span class="rec-badge">&#10022; Recommended</span></div>
             </div>
-            <div onclick="switchPreview('engage')" data-mod-tab="engage" role="tab" aria-selected="false" tabindex="-1" class="mod-tab flex items-start gap-3 px-4 py-3.5 rounded-xl">
-              <svg class="w-5 h-5 flex-shrink-0 mt-0.5" style="color:#0F6FDE" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-              <div class="flex flex-col"><span class="text-sm">Engage</span><span class="text-[10px] text-text-muted leading-tight">850+ care teams</span><span class="rec-badge">&#10022; Recommended</span></div>
+            <div onclick="switchPreview('engage')" data-mod-tab="engage" role="tab" aria-selected="false" tabindex="-1" class="mod-tab flex items-center gap-3 px-4 py-3 rounded-xl">
+              <svg class="w-5 h-5 flex-shrink-0" style="color:#0F6FDE" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+              <div class="flex flex-col"><span class="text-sm font-medium">Secure Comms</span><span class="text-[10px] text-text-muted leading-tight">850+ care teams</span><span class="rec-badge">&#10022; Recommended</span></div>
             </div>
-            <div onclick="switchPreview('collect')" data-mod-tab="collect" role="tab" aria-selected="false" tabindex="-1" class="mod-tab flex items-start gap-3 px-4 py-3.5 rounded-xl">
-              <svg class="w-5 h-5 flex-shrink-0 mt-0.5" style="color:#14B8A6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
-              <div class="flex flex-col"><span class="text-sm">Collect</span><span class="text-[10px] text-text-muted leading-tight">500K+ forms sent</span><span class="rec-badge">&#10022; Recommended</span></div>
-            </div>
-            <div onclick="switchPreview('api')" data-mod-tab="api" role="tab" aria-selected="false" tabindex="-1" class="mod-tab flex items-start gap-3 px-4 py-3.5 rounded-xl">
-              <svg class="w-5 h-5 flex-shrink-0 mt-0.5" style="color:#64748B" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
-              <div class="flex flex-col"><span class="text-sm">API</span><span class="text-[10px] text-text-muted leading-tight">99.9% uptime</span><span class="rec-badge">&#10022; Recommended</span></div>
+            <div onclick="switchPreview('signature')" data-mod-tab="signature" role="tab" aria-selected="false" tabindex="-1" class="mod-tab flex items-center gap-3 px-4 py-3 rounded-xl">
+              <svg class="w-5 h-5 flex-shrink-0" style="color:#7C3AED" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
+              <div class="flex flex-col"><span class="text-sm font-medium">eSign</span><span class="text-[10px] text-text-muted leading-tight">1.2M docs signed</span><span class="rec-badge">&#10022; Recommended</span></div>
             </div>
           </div>
 
-          <!-- Right: product preview -->
-          <div class="glass-card rounded-2xl border border-border card-shadow-lg p-5" role="tabpanel" aria-label="Module preview">
-            <!-- FAX preview -->
-            <div id="preview-fax" class="preview-panel active">
-              <div class="flex items-center justify-between mb-4">
-                <div><h3 class="font-display text-lg font-semibold text-text-primary" style="letter-spacing:-0.02em;">Fax</h3><p class="text-xs text-text-secondary mt-1 leading-relaxed">Digital fax with intelligent routing. Send, receive, and track documents across organizations with automatic team assignment and full audit trails. No fax machine needed.</p></div>
-              </div>
-              <div class="rounded-2xl overflow-hidden border border-border shadow"><img src="https://placehold.co/600x280/0A1628/0F6FDE?text=Fax+Inbox" alt="Docflow Fax inbox" class="w-full max-h-[280px] object-cover object-top" /></div>
-              <div class="flex gap-3 mt-5"><button onclick="selectMod('fax')" class="flex-1 px-5 py-3.5 rounded-xl border-2 border-purple-core text-purple-core text-sm font-semibold hover:bg-purple-subtle active:scale-[0.97] transition-colors duration-200">Try it now</button><button onclick="directSetup('fax')" class="btn-shimmer flex-1 px-5 py-3.5 rounded-xl bg-purple-core text-white text-sm font-semibold active:scale-[0.97]" style="box-shadow:0 4px 16px rgba(15,111,222,0.4);">Set up with work email &rarr;</button></div>
-            </div>
-
-            <!-- SIGNATURE preview -->
-            <div id="preview-signature" class="preview-panel">
-              <div class="flex items-center justify-between mb-4"><div><h3 class="font-display text-lg font-semibold text-text-primary" style="letter-spacing:-0.02em;">E-Signature</h3><p class="text-xs text-text-secondary mt-1 leading-relaxed">Get documents signed in minutes, not days. HIPAA-compliant e-signatures with real-time tracking, automated reminders, and tamper-proof audit trails for every signature.</p></div></div>
-              <div class="mockup-shell">
-                <div class="mockup-topbar"><div class="mockup-dot" style="background:#7C3AED;opacity:0.6;"></div><div class="mockup-dot" style="background:#7C3AED;opacity:0.3;"></div><div class="mockup-dot" style="background:#7C3AED;opacity:0.15;"></div><span class="text-[10px] text-text-muted ml-2 font-mono">Patient Consent Form.pdf</span></div>
-                <div class="p-6">
-                  <div class="border border-border rounded-lg p-4 mb-4 bg-base/50"><div class="h-2 bg-floating rounded w-full mb-2"></div><div class="h-2 bg-floating rounded w-5/6 mb-2"></div><div class="h-2 bg-floating rounded w-4/6 mb-4"></div><div class="border-2 border-dashed rounded-lg p-3 text-center" style="border-color:#7C3AED40;"><p class="text-xs text-text-muted">Signature Field</p><p class="font-display text-lg italic" style="color:#7C3AED;">Jane Smith</p></div></div>
-                  <div class="flex items-center justify-between"><div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full" style="background:#7C3AED;"></div><span class="text-xs text-text-secondary">jane@clinic.com</span></div><span class="mockup-badge text-white" style="background:#7C3AED;">Signed</span></div>
+          <!-- Right: sandbox + video -->
+          <div role="tabpanel" aria-label="Module preview">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 items-stretch" style="min-height:420px;">
+              <!-- Sandbox placeholder (2/3) -->
+              <div class="lg:col-span-2">
+                <div class="bg-white rounded-2xl border border-border card-shadow-lg p-7 h-full relative">
+                  <span class="absolute top-5 right-5 text-[10px] font-mono text-text-muted uppercase tracking-widest font-semibold">Sandbox</span>
+                  <div class="absolute bottom-7 left-7 right-7">
+                    <button id="s3-signup-btn" onclick="S.mod=S._s3mod||'fax';goToScreen(6)" class="btn-shimmer w-full px-6 py-3.5 rounded-xl bg-purple-core text-white text-sm font-semibold active:scale-[0.97]" style="box-shadow:0 4px 16px rgba(15,111,222,0.4);">Sign up with email</button>
+                  </div>
                 </div>
               </div>
-              <div class="flex gap-3 mt-5"><button onclick="selectMod('signature')" class="flex-1 px-5 py-3.5 rounded-xl border-2 border-purple-core text-purple-core text-sm font-semibold hover:bg-purple-subtle active:scale-[0.97] transition-colors duration-200">Try it now</button><button onclick="directSetup('signature')" class="btn-shimmer flex-1 px-5 py-3.5 rounded-xl bg-purple-core text-white text-sm font-semibold active:scale-[0.97]" style="box-shadow:0 4px 16px rgba(15,111,222,0.4);">Set up with work email &rarr;</button></div>
-            </div>
-
-            <!-- AUTOMATE preview -->
-            <div id="preview-automate" class="preview-panel">
-              <div class="flex items-center justify-between mb-4"><div><h3 class="font-display text-lg font-semibold text-text-primary" style="letter-spacing:-0.02em;">Automate</h3><p class="text-xs text-text-secondary mt-1 leading-relaxed">AI that reads, classifies, and routes documents automatically. Extract patient data, insurance details, and clinical information from every incoming fax. No manual data entry.</p></div></div>
-              <div class="rounded-2xl overflow-hidden border border-border shadow"><img src="https://placehold.co/600x280/0A1628/5BA3F5?text=Automate+Workflows" alt="Docflow Automate workflows" class="w-full max-h-[280px] object-cover object-top" /></div>
-              <div class="flex gap-3 mt-5"><button onclick="selectMod('automate')" class="flex-1 px-5 py-3.5 rounded-xl border-2 border-purple-core text-purple-core text-sm font-semibold hover:bg-purple-subtle active:scale-[0.97] transition-colors duration-200">Try it now</button><button onclick="directSetup('automate')" class="btn-shimmer flex-1 px-5 py-3.5 rounded-xl bg-purple-core text-white text-sm font-semibold active:scale-[0.97]" style="box-shadow:0 4px 16px rgba(15,111,222,0.4);">Set up with work email &rarr;</button></div>
-            </div>
-
-            <!-- ENGAGE preview -->
-            <div id="preview-engage" class="preview-panel">
-              <div class="flex items-center justify-between mb-4"><div><h3 class="font-display text-lg font-semibold text-text-primary" style="letter-spacing:-0.02em;">Engage</h3><p class="text-xs text-text-secondary mt-1 leading-relaxed">Secure messaging that replaces phone tag. Chat, SMS, and email with full HIPAA audit trails, read receipts, and patient-linked conversations. Know exactly who said what, when.</p></div></div>
-              <div class="rounded-2xl overflow-hidden border border-border shadow"><img src="https://placehold.co/600x280/0A1628/0F6FDE?text=Engage+Chat" alt="Docflow Engage chat" class="w-full max-h-[280px] object-cover object-top" /></div>
-              <div class="flex gap-3 mt-5"><button onclick="selectMod('engage')" class="flex-1 px-5 py-3.5 rounded-xl border-2 border-purple-core text-purple-core text-sm font-semibold hover:bg-purple-subtle active:scale-[0.97] transition-colors duration-200">Try it now</button><button onclick="directSetup('engage')" class="btn-shimmer flex-1 px-5 py-3.5 rounded-xl bg-purple-core text-white text-sm font-semibold active:scale-[0.97]" style="box-shadow:0 4px 16px rgba(15,111,222,0.4);">Set up with work email &rarr;</button></div>
-            </div>
-
-            <!-- COLLECT preview -->
-            <div id="preview-collect" class="preview-panel">
-              <div class="flex items-center justify-between mb-4"><div><h3 class="font-display text-lg font-semibold text-text-primary" style="letter-spacing:-0.02em;">Collect</h3><p class="text-xs text-text-secondary mt-1 leading-relaxed">Patient intake that happens before the visit. Digital forms patients complete on their phones, with real-time insurance verification and direct EHR integration. No more clipboards.</p></div></div>
-              <div class="rounded-2xl overflow-hidden border border-border shadow"><img src="https://placehold.co/600x280/0A1628/5BA3F5?text=Collect+Forms" alt="Docflow Collect forms" class="w-full max-h-[280px] object-cover object-top" /></div>
-              <div class="flex gap-3 mt-5"><button onclick="selectMod('collect')" class="flex-1 px-5 py-3.5 rounded-xl border-2 border-purple-core text-purple-core text-sm font-semibold hover:bg-purple-subtle active:scale-[0.97] transition-colors duration-200">Try it now</button><button onclick="directSetup('collect')" class="btn-shimmer flex-1 px-5 py-3.5 rounded-xl bg-purple-core text-white text-sm font-semibold active:scale-[0.97]" style="box-shadow:0 4px 16px rgba(15,111,222,0.4);">Set up with work email &rarr;</button></div>
-            </div>
-
-            <!-- API preview -->
-            <div id="preview-api" class="preview-panel">
-              <div class="flex items-center justify-between mb-4"><div><h3 class="font-display text-lg font-semibold text-text-primary" style="letter-spacing:-0.02em;">API &amp; Integrations</h3><p class="text-xs text-text-secondary mt-1 leading-relaxed">Build Docflow into your stack. RESTful API with webhooks, batch processing, and pre-built EHR connectors. Every endpoint is HIPAA-compliant with full audit trails.</p></div></div>
-              <div class="mockup-shell">
-                <div class="mockup-topbar"><div class="mockup-dot" style="background:#64748B;opacity:0.6;"></div><div class="mockup-dot" style="background:#64748B;opacity:0.3;"></div><div class="mockup-dot" style="background:#64748B;opacity:0.15;"></div><span class="text-[10px] text-text-muted ml-2 font-mono">API Explorer</span></div>
-                <div class="p-4">
-                  <div class="rounded-lg border border-border bg-base p-4 font-mono text-xs leading-relaxed mb-3"><span class="text-text-muted"># Send a fax</span><br><span class="text-purple-core">POST</span> <span class="text-text-primary">/v1/fax</span><br><br><span class="text-text-muted">Headers:</span><br>&nbsp;&nbsp;Authorization: Bearer <span class="text-purple-core">df_sk_...</span><br>&nbsp;&nbsp;Content-Type: <span class="text-text-secondary">application/json</span></div>
-                  <div class="rounded-lg border border-border bg-base p-4 font-mono text-xs leading-relaxed"><span class="text-text-muted">Response:</span> <span style="color:#14B8A6;">200 OK</span><br>{<br>&nbsp;&nbsp;"id": "<span class="text-purple-core">fax_9x8k2m</span>",<br>&nbsp;&nbsp;"status": "<span style="color:#14B8A6;">delivered</span>",<br>&nbsp;&nbsp;"pages": <span class="text-text-primary">3</span>,<br>&nbsp;&nbsp;"duration_ms": <span class="text-text-primary">1823</span><br>}</div>
+              <!-- Mock video (1/3) -->
+              <div class="lg:col-span-1">
+                <div class="video-player h-full" id="s3-video-box" style="min-height:100%;">
+                  <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-purple-core/20 to-purple-core/5">
+                    <div class="text-center"><p class="text-white/50 text-xs font-mono mb-2" id="s3-video-label">Send a fax in under 2 seconds</p><svg class="h-5 mx-auto opacity-30" viewBox="0 0 140 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="4" width="20" height="20" rx="4" fill="#0F6FDE"/><path d="M6 11l4 4 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 15V9" stroke="white" stroke-width="2" stroke-linecap="round"/><text x="26" y="20" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="18" fill="white">Docflow</text></svg><span class="absolute bottom-16 right-4 px-2 py-0.5 rounded text-[9px] font-mono text-white/40 bg-white/10">60 sec</span></div>
+                  </div>
+                  <div class="play-btn"><svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                  <div class="video-progress"><div class="video-progress-fill"></div></div>
                 </div>
               </div>
-              <div class="flex gap-3 mt-5"><button onclick="selectMod('api')" class="flex-1 px-5 py-3.5 rounded-xl border-2 border-purple-core text-purple-core text-sm font-semibold hover:bg-purple-subtle active:scale-[0.97] transition-colors duration-200">Try it now</button><button onclick="directSetup('api')" class="btn-shimmer flex-1 px-5 py-3.5 rounded-xl bg-purple-core text-white text-sm font-semibold active:scale-[0.97]" style="box-shadow:0 4px 16px rgba(15,111,222,0.4);">Set up with work email &rarr;</button></div>
             </div>
           </div>
         </div>
 
-        <div class="strategy-tip mt-10"><div class="tip-content"><div class="tip-label">PLG Strategy: Module Selection</div><p><strong>Jobs-to-be-done routing</strong> at the top reduces cognitive load from 6 choices to 1 recommended path. Clicking a problem auto-selects the matching module and adds a "Recommended" badge. If the user completed segmentation, we auto-recommend based on their industry + role (25-40% higher first-action completion per Chameleon/Appcues research). <strong>Tabs + live preview</strong> mirrors a proven product page pattern. The <strong>product sells itself</strong> , users see what they're getting before committing.</p></div></div>
+        <div class="strategy-tip mt-6"><div class="tip-content"><div class="tip-label">PLG Strategy: Module Selection</div><p><strong>Persistent product sidebar</strong> lets users switch modules without leaving the page - reducing friction and increasing cross-sell discovery. <strong>"Recommended" badges</strong> are driven by segmentation data (industry + role), boosting first-action completion 25-40% (Chameleon/Appcues research). <strong>Sandbox + video layout</strong> gives users two ways to engage: hands-on interaction or passive viewing. The sandbox creates <strong>psychological ownership</strong> before signup, while the video reduces cognitive load for first-time users. <strong>Sign-up CTA is embedded in the sandbox</strong> - conversion happens at peak engagement, not on a separate page.</p></div></div>
       </div>
     </div>
 
     <!-- ===== SCREEN 4: SANDBOX ===== -->
-    <div id="screen-4" class="screen-panel flex-1 flex-col items-center px-4 py-16">
-      <div class="w-full max-w-[960px] mx-auto">
+    <div id="screen-4" class="screen-panel flex-1 flex-col items-center px-4 py-4 relative dot-pattern">
+      <div class="w-full max-w-[960px] mx-auto relative z-10">
         <!-- SANDBOX ACTIVE -->
         <div id="sandbox-active">
-          <div class="text-center mb-8">
-            <div id="sandbox-icon" class="w-14 h-14 rounded-2xl bg-purple-subtle flex items-center justify-center mx-auto mb-4"><svg class="w-7 h-7 text-purple-core" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
-            <h1 id="sandbox-title" class="font-display text-3xl font-semibold text-text-primary leading-tight" style="letter-spacing:-0.03em;">Send your first fax</h1>
-            <p id="sandbox-subtitle" class="text-sm text-text-secondary mt-2">Experience Docflow's speed. This is your sandbox.</p>
-            <button onclick="goToScreen(5)" class="text-sm text-text-muted hover:text-purple-core transition-colors duration-200 mt-3">Skip to dashboard &rarr;</button>
-          </div>
-
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
-            <!-- Left: sandbox form -->
-            <div>
-
-              <!-- ── FAX SANDBOX ── -->
-              <div id="sb-fax" class="glass-card rounded-2xl border border-border card-shadow-lg p-7">
-                <div class="flex items-center justify-between mb-5"><span class="text-[10px] font-mono text-purple-core uppercase tracking-widest font-semibold">Compose Fax</span><span class="px-2.5 py-1 rounded-full text-[10px] font-mono bg-purple-subtle text-purple-core">Preview Mode</span></div>
-                <div class="space-y-4">
-                  <div class="grid grid-cols-2 gap-4">
-                    <div><label class="block text-xs font-medium text-text-primary mb-1.5">Your Fax Number</label><div class="px-3 py-2.5 rounded-lg border border-border bg-base text-sm text-text-secondary font-mono">(555) 100-7890</div><p class="text-[10px] text-text-muted mt-1">Free sandbox number</p></div>
-                    <div><label class="block text-xs font-medium text-text-primary mb-1.5">Recipient</label><select class="custom-select w-full px-3 py-2.5 rounded-lg border border-border bg-white text-sm text-text-primary cursor-pointer"><option selected>St. James Hospital , Radiology</option><option>Quest Diagnostics , Lab Results</option><option>Mercy General , Referrals</option><option disabled>Custom number (unlock after trial)</option></select></div>
-                  </div>
-                  <div><label class="block text-xs font-medium text-text-primary mb-1.5">Document</label><select class="custom-select w-full px-3 py-2.5 rounded-lg border border-border bg-white text-sm text-text-primary cursor-pointer"><option selected>Patient Referral (3 pages)</option><option>Prior Authorization Form (2 pages)</option><option>Lab Results Report (1 page)</option><option disabled>Upload custom document (unlock after trial)</option></select></div>
-                  <div class="grid grid-cols-2 gap-4">
-                    <div><label class="block text-xs font-medium text-text-primary mb-1.5">Label</label><select class="custom-select w-full px-3 py-2.5 rounded-lg border border-border bg-white text-sm text-text-primary cursor-pointer"><option selected>Referral</option><option>Prior Auth</option><option>Lab Results</option><option>Insurance</option></select></div>
-                    <div><label class="block text-xs font-medium text-text-primary mb-1.5">After Delivery</label><select class="custom-select w-full px-3 py-2.5 rounded-lg border border-border bg-white text-sm text-text-primary cursor-pointer"><option selected>Archive</option><option>Forward to Team</option><option>Flag for Review</option></select></div>
-                  </div>
-                  <div class="flex items-center gap-3 px-3 py-2 rounded-lg bg-purple-subtle/50 border border-purple-core/10"><input type="checkbox" checked class="accent-purple-core w-4 h-4 rounded" /><span class="text-xs text-text-secondary">Include cover page</span><span class="text-[10px] text-text-muted ml-auto">From: You &bull; To: St. James Radiology</span></div>
-                  <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-purple-subtle/30 border border-purple-core/10"><svg class="w-3.5 h-3.5 text-purple-core flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg><span class="text-[10px] text-text-secondary">End-to-end encrypted &bull; HIPAA compliant &bull; Audit trail enabled</span></div>
-                </div>
-                <button onclick="sbSend('fax')" id="sb-fax-cta" class="btn-shimmer w-full mt-5 px-6 py-3.5 rounded-xl bg-purple-core text-white text-sm font-semibold active:scale-[0.97]" style="box-shadow:0 4px 16px rgba(15,111,222,0.4);">Send Fax</button>
-                <!-- Result area -->
-                <div id="sb-fax-result-area" class="mt-5 rounded-xl border border-border bg-base/50 p-4">
-                  <div id="sb-fax-skeleton" class="space-y-2">
-                    <div class="h-3 bg-floating rounded w-3/4"></div>
-                    <div class="h-3 bg-floating rounded w-1/2"></div>
-                    <div class="h-3 bg-floating rounded w-2/3"></div>
-                    <div class="h-3 bg-floating rounded w-1/3"></div>
-                  </div>
-                  <div id="sb-fax-live" class="hidden">
-                    <div class="flex items-center justify-between mb-4"><span class="text-[10px] font-mono text-purple-core uppercase tracking-widest font-semibold">Delivery Report</span><span class="text-[10px] font-mono text-text-muted" id="sb-timer">0.0s</span></div>
-                    <div class="w-full h-1.5 rounded-full bg-floating overflow-hidden mb-5"><div id="sb-prog" class="h-full rounded-full progress-fill" style="width:0%"></div></div>
-                    <div id="sb-fax-steps" class="space-y-0">
-                      <div class="sb-step flex items-center gap-3 py-2.5 opacity-30"><div class="w-6 h-6 rounded-full bg-floating flex items-center justify-center"><svg class="w-3 h-3 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-text-secondary">Fax queued</span><span class="text-[10px] text-text-muted ml-auto">-</span></div>
-                      <div class="sb-step flex items-center gap-3 py-2.5 opacity-30"><div class="w-6 h-6 rounded-full bg-floating flex items-center justify-center"><svg class="w-3 h-3 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-text-secondary">Transmitting 3 pages</span><span class="text-[10px] text-text-muted ml-auto">-</span></div>
-                      <div class="sb-step flex items-center gap-3 py-2.5 opacity-30"><div class="w-6 h-6 rounded-full bg-floating flex items-center justify-center"><svg class="w-3 h-3 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-text-secondary">Recipient confirmed</span><span class="text-[10px] text-text-muted ml-auto">-</span></div>
-                      <div class="sb-step flex items-center gap-3 py-2.5 opacity-30"><div class="w-6 h-6 rounded-full bg-floating flex items-center justify-center"><svg class="w-3 h-3 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-text-secondary">Delivered &bull; Audit logged</span><span class="text-[10px] text-text-muted ml-auto">-</span></div>
-                    </div>
-                    <div id="sb-fax-card" class="hidden mt-4 rounded-xl border-2 border-purple-core/20 bg-purple-subtle/20 p-4">
-                      <div class="flex items-center gap-3 mb-3"><div class="w-10 h-10 rounded-xl bg-purple-core flex items-center justify-center"><svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><div><p class="text-sm font-semibold text-text-primary">Fax Delivered</p><p class="text-[10px] text-text-muted font-mono">FX-2026-00847 &bull; 3/3 pages &bull; 1.8s</p></div></div>
-                      <div class="rounded-lg border border-purple-core/10 bg-white p-3 text-xs space-y-1.5">
-                        <div class="flex justify-between"><span class="text-text-muted">Recipient</span><span class="text-text-primary">St. James Hospital , Radiology</span></div>
-                        <div class="flex justify-between"><span class="text-text-muted">Label</span><span class="text-text-primary">Referral</span></div>
-                        <div class="flex justify-between"><span class="text-text-muted">Routed</span><span class="text-text-primary">Archived</span></div>
-                      </div>
-                      <div class="mt-3 rounded-lg border border-border bg-base p-3"><p class="text-[10px] font-mono text-purple-core mb-1">AI Insight</p><p class="text-xs text-text-secondary">Detected: <strong>Patient Referral</strong>. Extracted patient name, DOB, referring physician. <a href="#" class="text-purple-core font-medium" onclick="event.preventDefault();selectMod('automate')">See in Automate &rarr;</a></p></div>
-                      <button onclick="showWorkEmail()" class="btn-shimmer w-full mt-4 px-6 py-3 rounded-xl bg-purple-core text-white text-sm font-semibold active:scale-[0.97]" style="box-shadow:0 4px 16px rgba(15,111,222,0.4);">Explore Your Dashboard &rarr;</button>
-                    </div>
-                  </div>
-                </div>
+          <div class="grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-6">
+            <!-- Left: Docflow Products column -->
+            <div class="flex lg:flex-col gap-2 bg-white/60 backdrop-blur-sm rounded-2xl border border-border card-shadow p-3" role="tablist" aria-label="Product modules">
+              <div class="flex flex-col items-center gap-0.5 px-4 pt-4 pb-3 mb-1">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none"><rect x="0" y="0" width="24" height="24" rx="5" fill="#0F6FDE"/><path d="M7 11l5 5 5-5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 16V9" stroke="white" stroke-width="2.2" stroke-linecap="round"/></svg>
+                <span class="font-display text-sm font-bold text-text-primary text-center" style="letter-spacing:-0.02em;">Docflow<br>Products</span>
               </div>
-
-              <!-- ── E-SIGNATURE SANDBOX ── -->
-              <div id="sb-signature" class="hidden glass-card rounded-2xl border border-border card-shadow-lg p-7">
-                <div class="flex items-center justify-between mb-5"><span class="text-[10px] font-mono uppercase tracking-widest font-semibold" style="color:#7C3AED;">Prepare Document</span><span class="px-2.5 py-1 rounded-full text-[10px] font-mono" style="background:rgba(124,58,237,0.06);color:#7C3AED;">Preview Mode</span></div>
-                <div class="space-y-4">
-                  <div><label class="block text-xs font-medium text-text-primary mb-1.5">Template</label><select class="custom-select w-full px-3 py-2.5 rounded-lg border border-border bg-white text-sm text-text-primary cursor-pointer"><option selected>Patient Consent Form</option><option>HIPAA Authorization</option><option>Treatment Agreement</option><option>Release of Information</option></select></div>
-                  <div class="rounded-xl border border-border bg-base p-4"><p class="text-[10px] font-mono text-text-muted mb-2">Document Preview</p><div class="space-y-1.5"><div class="h-2 bg-floating rounded w-full"></div><div class="h-2 bg-floating rounded w-5/6"></div><div class="h-2 bg-floating rounded w-4/6"></div><div class="h-2 bg-floating rounded w-full mt-3"></div><div class="h-2 bg-floating rounded w-3/4"></div></div><div class="mt-3 border-2 border-dashed rounded-lg p-2.5 text-center" style="border-color:rgba(124,58,237,0.3);background:rgba(124,58,237,0.04);"><p class="text-[10px] text-text-muted">Signature Field</p></div></div>
-                  <div><label class="block text-xs font-medium text-text-primary mb-1.5">Signer</label><div class="flex items-center gap-3 px-3 py-2.5 rounded-lg border border-border bg-white"><div class="w-7 h-7 rounded-full flex items-center justify-center text-white text-[10px] font-bold" style="background:#7C3AED;">JS</div><div class="flex-1"><p class="text-xs font-medium text-text-primary">Jane Smith (Patient)</p><p class="text-[10px] text-text-muted">jane.smith@sandbox.docflow.io</p></div></div></div>
-                  <div><label class="block text-xs font-medium text-text-primary mb-1.5">Required Fields</label><div class="flex flex-wrap gap-2"><span class="px-2 py-1 rounded text-[10px] font-medium bg-purple-subtle text-purple-core">&#10003; Full Name</span><span class="px-2 py-1 rounded text-[10px] font-medium bg-purple-subtle text-purple-core">&#10003; Date of Birth</span><span class="px-2 py-1 rounded text-[10px] font-medium bg-purple-subtle text-purple-core">&#10003; Signature</span><span class="px-2 py-1 rounded text-[10px] font-medium bg-purple-subtle text-purple-core">&#10003; Date</span><span class="px-2 py-1 rounded text-[10px] font-medium bg-floating text-text-muted">Insurance ID</span></div></div>
-                </div>
-                <button onclick="sbSend('signature')" id="sb-signature-cta" class="btn-shimmer w-full mt-5 px-6 py-3.5 rounded-xl text-white text-sm font-semibold active:scale-[0.97]" style="background:#0F6FDE;box-shadow:0 4px 16px rgba(15,111,222,0.4);">Send for Signature</button>
-                <!-- Result area -->
-                <div id="sb-signature-result-area" class="mt-5 rounded-xl border border-border bg-base/50 p-4">
-                  <div id="sb-signature-skeleton" class="space-y-2">
-                    <div class="h-3 bg-floating rounded w-3/4"></div>
-                    <div class="h-3 bg-floating rounded w-1/2"></div>
-                    <div class="h-3 bg-floating rounded w-2/3"></div>
-                    <div class="h-3 bg-floating rounded w-1/3"></div>
-                  </div>
-                  <div id="sb-signature-live" class="hidden">
-                    <div class="flex items-center justify-between mb-4"><span class="text-[10px] font-mono uppercase tracking-widest font-semibold" style="color:#7C3AED;">Signing Status</span><span class="text-[10px] font-mono text-text-muted" id="sb-sig-timer">0.0s</span></div>
-                    <div class="w-full h-1.5 rounded-full bg-floating overflow-hidden mb-5"><div id="sb-sig-prog" class="h-full rounded-full" style="width:0%;background:linear-gradient(90deg,#C4B5FD,#7C3AED);transition:width 0.8s ease;"></div></div>
-                    <div id="sb-sig-steps" class="space-y-0">
-                      <div class="sb-step flex items-center gap-3 py-2 opacity-30"><div class="w-6 h-6 rounded-full bg-floating flex items-center justify-center"><svg class="w-3 h-3 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-text-secondary">Envelope created</span><span class="text-[10px] text-text-muted ml-auto">-</span></div>
-                      <div class="sb-step flex items-center gap-3 py-2 opacity-30"><div class="w-6 h-6 rounded-full bg-floating flex items-center justify-center"><svg class="w-3 h-3 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-text-secondary">Email sent to jane.smith@sandbox</span><span class="text-[10px] text-text-muted ml-auto">-</span></div>
-                      <div class="sb-step flex items-center gap-3 py-2 opacity-30"><div class="w-6 h-6 rounded-full bg-floating flex items-center justify-center"><svg class="w-3 h-3 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-text-secondary">Document opened</span><span class="text-[10px] text-text-muted ml-auto">-</span></div>
-                      <div class="sb-step flex items-center gap-3 py-2 opacity-30"><div class="w-6 h-6 rounded-full bg-floating flex items-center justify-center"><svg class="w-3 h-3 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-text-secondary">Signature applied</span><span class="text-[10px] text-text-muted ml-auto">-</span></div>
-                      <div class="sb-step flex items-center gap-3 py-2 opacity-30"><div class="w-6 h-6 rounded-full bg-floating flex items-center justify-center"><svg class="w-3 h-3 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-text-secondary">Completed &amp; sealed</span><span class="text-[10px] text-text-muted ml-auto">-</span></div>
-                    </div>
-                    <div id="sb-sig-card" class="hidden mt-4 rounded-xl border-2 bg-base p-4" style="border-color:rgba(124,58,237,0.2);">
-                      <div class="rounded-lg border border-border bg-white p-4 mb-3"><div class="space-y-1.5"><div class="h-2 bg-floating rounded w-full"></div><div class="h-2 bg-floating rounded w-5/6"></div><div class="h-2 bg-floating rounded w-4/6"></div></div><div class="mt-3 border-2 rounded-lg p-2 text-center" style="border-color:rgba(124,58,237,0.3);background:rgba(124,58,237,0.04);"><p class="font-display text-lg italic" style="color:#7C3AED;">Jane Smith</p><p class="text-[10px] text-text-muted">Signed Mar 24, 2026 10:04 AM</p></div></div>
-                      <div class="flex items-center gap-2 px-3 py-2 rounded-lg text-[10px] font-mono" style="background:rgba(124,58,237,0.05);color:#7C3AED;"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>Tamper-evident seal &bull; SHA-256 hash verified</div>
-                      <button onclick="showWorkEmail()" class="btn-shimmer w-full mt-4 px-6 py-3 rounded-xl text-white text-sm font-semibold active:scale-[0.97]" style="background:#0F6FDE;box-shadow:0 4px 16px rgba(15,111,222,0.4);">Explore Your Dashboard &rarr;</button>
-                    </div>
-                  </div>
-                </div>
+              <div onclick="switchS4('fax')" data-s4-tab="fax" class="mod-tab flex items-center gap-3 px-4 py-3 rounded-xl">
+                <svg class="w-5 h-5 flex-shrink-0" style="color:#0F6FDE" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <div class="flex flex-col"><span class="text-sm font-medium">eFax</span><span class="text-[10px] text-text-muted leading-tight">2,400+ clinics</span></div>
               </div>
-
-              <!-- ── AUTOMATE SANDBOX ── -->
-              <div id="sb-automate" class="hidden glass-card rounded-2xl border border-border card-shadow-lg p-7">
-                <div class="flex items-center justify-between mb-5"><span class="text-[10px] font-mono uppercase tracking-widest font-semibold" style="color:#6366F1;">Choose Workflow</span><span class="px-2.5 py-1 rounded-full text-[10px] font-mono" style="background:rgba(99,102,241,0.06);color:#6366F1;">Preview Mode</span></div>
-                <div class="space-y-3">
-                  <label class="block rounded-xl border-2 border-purple-core/20 bg-purple-subtle/20 p-4 cursor-pointer"><input type="radio" name="wf" checked class="accent-purple-core mr-2" /><span class="text-sm font-medium text-text-primary">Referral Processing</span><p class="text-xs text-text-secondary mt-1 ml-6">Incoming referral &rarr; Extract patient data &rarr; Route to intake team</p></label>
-                  <label class="block rounded-xl border border-border bg-white p-4 cursor-pointer hover:border-purple-core/20 transition-colors"><input type="radio" name="wf" class="accent-purple-core mr-2" /><span class="text-sm font-medium text-text-primary">Prior Auth Triage</span><p class="text-xs text-text-secondary mt-1 ml-6">New prior auth &rarr; Check requirements &rarr; Flag gaps &rarr; Submit</p></label>
-                  <label class="block rounded-xl border border-border bg-white p-4 cursor-pointer hover:border-purple-core/20 transition-colors"><input type="radio" name="wf" class="accent-purple-core mr-2" /><span class="text-sm font-medium text-text-primary">Lab Result Routing</span><p class="text-xs text-text-secondary mt-1 ml-6">Lab results received &rarr; Classify by type &rarr; Route to physician</p></label>
-                </div>
-                <div class="mt-4 flex items-center justify-between px-4 py-3 rounded-xl border border-border bg-base"><div class="flex items-center gap-8"><div class="text-center"><div class="w-8 h-8 rounded-lg flex items-center justify-center mx-auto mb-1" style="background:rgba(99,102,241,0.1);"><span class="text-[10px] font-mono font-bold" style="color:#6366F1;">PDF</span></div><p class="text-[9px] text-text-muted">Receive</p></div><svg class="w-3 h-3 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg><div class="text-center"><div class="w-8 h-8 rounded-lg flex items-center justify-center mx-auto mb-1" style="background:rgba(99,102,241,0.1);"><svg class="w-4 h-4" style="color:#6366F1;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg></div><p class="text-[9px] text-text-muted">Classify</p></div><svg class="w-3 h-3 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg><div class="text-center"><div class="w-8 h-8 rounded-lg flex items-center justify-center mx-auto mb-1" style="background:rgba(99,102,241,0.1);"><svg class="w-4 h-4" style="color:#6366F1;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg></div><p class="text-[9px] text-text-muted">Extract</p></div><svg class="w-3 h-3 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg><div class="text-center"><div class="w-8 h-8 rounded-lg flex items-center justify-center mx-auto mb-1" style="background:rgba(99,102,241,0.1);"><svg class="w-4 h-4" style="color:#6366F1;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg></div><p class="text-[9px] text-text-muted">Route</p></div></div></div>
-                <button onclick="sbSend('automate')" id="sb-automate-cta" class="btn-shimmer w-full mt-5 px-6 py-3.5 rounded-xl text-white text-sm font-semibold active:scale-[0.97]" style="background:#0F6FDE;box-shadow:0 4px 16px rgba(15,111,222,0.4);">Run Automation</button>
-                <!-- Result area -->
-                <div id="sb-automate-result-area" class="mt-5 rounded-xl border border-border bg-base/50 p-4">
-                  <div id="sb-automate-skeleton" class="space-y-2">
-                    <div class="h-3 bg-floating rounded w-3/4"></div>
-                    <div class="h-3 bg-floating rounded w-1/2"></div>
-                    <div class="h-3 bg-floating rounded w-2/3"></div>
-                    <div class="h-3 bg-floating rounded w-1/3"></div>
-                  </div>
-                  <div id="sb-automate-live" class="hidden">
-                    <div class="flex items-center justify-between mb-4"><span class="text-[10px] font-mono uppercase tracking-widest font-semibold" style="color:#6366F1;">Results</span><span class="text-[10px] font-mono text-text-muted" id="sb-auto-timer">0.0s</span></div>
-                    <div class="w-full h-1.5 rounded-full bg-floating overflow-hidden mb-5"><div id="sb-auto-prog" class="h-full rounded-full" style="width:0%;background:linear-gradient(90deg,#A5B4FC,#6366F1);transition:width 0.8s ease;"></div></div>
-                    <div id="sb-auto-steps" class="space-y-0">
-                      <div class="sb-step flex items-center gap-3 py-2 opacity-30"><div class="w-6 h-6 rounded-full bg-floating flex items-center justify-center"><svg class="w-3 h-3 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-text-secondary">Document received</span><span class="text-[10px] text-text-muted ml-auto">-</span></div>
-                      <div class="sb-step flex items-center gap-3 py-2 opacity-30"><div class="w-6 h-6 rounded-full bg-floating flex items-center justify-center"><svg class="w-3 h-3 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-text-secondary">Classified: Patient Referral</span><span class="text-[10px] text-text-muted ml-auto">-</span></div>
-                      <div class="sb-step flex items-center gap-3 py-2 opacity-30"><div class="w-6 h-6 rounded-full bg-floating flex items-center justify-center"><svg class="w-3 h-3 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-text-secondary">Extracted: Sarah Chen, DOB, Dr. Patel</span><span class="text-[10px] text-text-muted ml-auto">-</span></div>
-                      <div class="sb-step flex items-center gap-3 py-2 opacity-30"><div class="w-6 h-6 rounded-full bg-floating flex items-center justify-center"><svg class="w-3 h-3 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-text-secondary">Urgency: Standard</span><span class="text-[10px] text-text-muted ml-auto">-</span></div>
-                      <div class="sb-step flex items-center gap-3 py-2 opacity-30"><div class="w-6 h-6 rounded-full bg-floating flex items-center justify-center"><svg class="w-3 h-3 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-text-secondary">Routed to Intake Queue</span><span class="text-[10px] text-text-muted ml-auto">-</span></div>
-                    </div>
-                    <div id="sb-auto-card" class="hidden mt-4 rounded-xl border-2 bg-base p-4" style="border-color:rgba(99,102,241,0.2);">
-                      <p class="text-[10px] font-mono mb-3" style="color:#6366F1;">Extracted Data</p>
-                      <div class="rounded-lg border border-border bg-white p-3 text-xs space-y-1.5">
-                        <div class="flex justify-between"><span class="text-text-muted">Patient</span><span class="text-text-primary font-medium">Sarah Chen</span></div>
-                        <div class="flex justify-between"><span class="text-text-muted">DOB</span><span class="text-text-primary">03/15/1985</span></div>
-                        <div class="flex justify-between"><span class="text-text-muted">Referring</span><span class="text-text-primary">Dr. Rajesh Patel, St. James Hospital</span></div>
-                        <div class="flex justify-between"><span class="text-text-muted">Diagnosis</span><span class="text-text-primary">Suspected meniscal tear, right knee</span></div>
-                        <div class="flex justify-between"><span class="text-text-muted">Insurance</span><span class="text-text-primary">Blue Shield PPO , BSP-449821</span></div>
-                        <div class="flex justify-between"><span class="text-text-muted">Routed to</span><span class="font-medium" style="color:#6366F1;">Intake Queue</span></div>
-                      </div>
-                      <p class="text-[10px] text-text-muted mt-3 text-center">This workflow runs automatically for every incoming fax. No manual review needed.</p>
-                      <button onclick="showWorkEmail()" class="btn-shimmer w-full mt-4 px-6 py-3 rounded-xl text-white text-sm font-semibold active:scale-[0.97]" style="background:#0F6FDE;box-shadow:0 4px 16px rgba(15,111,222,0.4);">Explore Your Dashboard &rarr;</button>
-                    </div>
-                  </div>
-                </div>
+              <div onclick="switchS4('automate')" data-s4-tab="automate" class="mod-tab flex items-center gap-3 px-4 py-3 rounded-xl">
+                <svg class="w-5 h-5 flex-shrink-0" style="color:#6366F1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                <div class="flex flex-col"><span class="text-sm font-medium">Document Processing</span><span class="text-[10px] text-text-muted leading-tight">Fastest growing</span></div>
               </div>
-
-              <!-- ── ENGAGE SANDBOX ── -->
-              <div id="sb-engage" class="hidden glass-card rounded-2xl border border-border card-shadow-lg p-7">
-                <div class="flex items-center justify-between mb-5"><span class="text-[10px] font-mono uppercase tracking-widest font-semibold" style="color:#0F6FDE;">Compose Message</span><span class="px-2.5 py-1 rounded-full text-[10px] font-mono" style="background:rgba(59,130,246,0.06);color:#0F6FDE;">Preview Mode</span></div>
-                <div class="space-y-4">
-                  <div><label class="block text-xs font-medium text-text-primary mb-1.5">Channel</label><div class="flex gap-2"><span class="px-3 py-1.5 rounded-lg text-xs font-medium text-white" style="background:#0F6FDE;">Secure Chat</span><span class="px-3 py-1.5 rounded-lg text-xs text-text-muted border border-border cursor-pointer hover:border-purple-core/30">SMS</span><span class="px-3 py-1.5 rounded-lg text-xs text-text-muted border border-border cursor-pointer hover:border-purple-core/30">Email</span></div></div>
-                  <div><label class="block text-xs font-medium text-text-primary mb-1.5">Recipient</label><select class="custom-select w-full px-3 py-2.5 rounded-lg border border-border bg-white text-sm text-text-primary cursor-pointer"><option selected>Dr. Rajesh Patel , Cardiology</option><option>Nurse Sarah Chen , Internal Medicine</option><option>Patient: Jane Smith</option><option disabled>Custom (unlock after trial)</option></select></div>
-                  <div><label class="block text-xs font-medium text-text-primary mb-1.5">Regarding Patient</label><div class="px-3 py-2.5 rounded-lg border border-border bg-base text-sm text-text-secondary">Sarah Chen , MRN SC-2026-0451</div></div>
-                  <div><label class="block text-xs font-medium text-text-primary mb-1.5">Message</label><textarea rows="3" class="form-input w-full px-3 py-2.5 rounded-lg border border-border bg-white text-sm text-text-primary resize-none">Hi Dr. Patel, sending over the lab results for patient Chen. Please review and confirm the referral at your earliest convenience.</textarea></div>
-                  <div class="grid grid-cols-2 gap-3">
-                    <div><label class="block text-xs font-medium text-text-primary mb-1.5">Attach</label><select class="custom-select w-full px-3 py-2.5 rounded-lg border border-border bg-white text-sm text-text-primary cursor-pointer"><option selected>Lab Results (1 file)</option><option>Referral Document</option><option>None</option></select></div>
-                    <div><label class="block text-xs font-medium text-text-primary mb-1.5">Priority</label><div class="flex gap-2 mt-0.5"><span class="px-3 py-1.5 rounded-lg text-xs font-medium text-white" style="background:#0F6FDE;">Normal</span><span class="px-3 py-1.5 rounded-lg text-xs text-text-muted border border-border cursor-pointer">Urgent</span></div></div>
-                  </div>
-                  <div class="flex items-center gap-2 px-3 py-2 rounded-lg" style="background:rgba(59,130,246,0.04);border:1px solid rgba(59,130,246,0.1);"><svg class="w-3.5 h-3.5 flex-shrink-0" style="color:#0F6FDE;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg><span class="text-[10px] text-text-secondary">End-to-end encrypted &bull; HIPAA compliant &bull; Read receipts enabled</span></div>
-                </div>
-                <button onclick="sbSend('engage')" id="sb-engage-cta" class="btn-shimmer w-full mt-5 px-6 py-3.5 rounded-xl text-white text-sm font-semibold active:scale-[0.97]" style="background:#0F6FDE;box-shadow:0 4px 16px rgba(59,130,246,0.4);">Send Message</button>
-                <!-- Result area -->
-                <div id="sb-engage-result-area" class="mt-5 rounded-xl border border-border bg-base/50 p-4">
-                  <div id="sb-engage-skeleton" class="space-y-2">
-                    <div class="h-3 bg-floating rounded w-3/4"></div>
-                    <div class="h-3 bg-floating rounded w-1/2"></div>
-                    <div class="h-3 bg-floating rounded w-2/3"></div>
-                    <div class="h-3 bg-floating rounded w-1/3"></div>
-                  </div>
-                  <div id="sb-engage-live" class="hidden">
-                    <div class="flex items-center justify-between mb-4"><span class="text-[10px] font-mono uppercase tracking-widest font-semibold" style="color:#0F6FDE;">Conversation</span><span class="text-[10px] font-mono text-text-muted" id="sb-eng-timer">0.0s</span></div>
-                    <div class="w-full h-1.5 rounded-full bg-floating overflow-hidden mb-4"><div id="sb-eng-prog" class="h-full rounded-full" style="width:0%;background:linear-gradient(90deg,#5BA3F5,#0F6FDE);transition:width 0.8s ease;"></div></div>
-                    <div id="sb-eng-steps" class="space-y-0">
-                      <div class="sb-step flex items-center gap-3 py-2 opacity-30"><div class="w-6 h-6 rounded-full bg-floating flex items-center justify-center"><svg class="w-3 h-3 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-text-secondary">Message sent</span><span class="text-[10px] text-text-muted ml-auto">-</span></div>
-                      <div class="sb-step flex items-center gap-3 py-2 opacity-30"><div class="w-6 h-6 rounded-full bg-floating flex items-center justify-center"><svg class="w-3 h-3 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-text-secondary">Delivered to Dr. Patel</span><span class="text-[10px] text-text-muted ml-auto">-</span></div>
-                      <div class="sb-step flex items-center gap-3 py-2 opacity-30"><div class="w-6 h-6 rounded-full bg-floating flex items-center justify-center"><svg class="w-3 h-3 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-text-secondary">Read by Dr. Patel</span><span class="text-[10px] text-text-muted ml-auto">-</span></div>
-                      <div class="sb-step flex items-center gap-3 py-2 opacity-30"><div class="w-6 h-6 rounded-full bg-floating flex items-center justify-center"><svg class="w-3 h-3 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-text-secondary">Dr. Patel replied</span><span class="text-[10px] text-text-muted ml-auto">-</span></div>
-                    </div>
-                    <div id="sb-eng-card" class="hidden mt-4 rounded-xl border-2 p-4" style="border-color:rgba(59,130,246,0.2);background:rgba(59,130,246,0.02);">
-                      <div class="space-y-3 mb-3">
-                        <div class="flex gap-2"><div class="w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center text-white text-[8px] font-bold" style="background:#0F6FDE;">You</div><div class="rounded-xl rounded-tl-none px-3 py-2 text-xs text-text-primary max-w-[80%]" style="background:rgba(59,130,246,0.06);">Hi Dr. Patel, sending over the lab results for patient Chen. Please review and confirm the referral.<br><span class="text-[10px] text-text-muted mt-1 inline-block">&#128206; lab_results_chen.pdf</span></div></div>
-                        <div class="flex items-center gap-1 ml-8"><svg class="w-3 h-3" style="color:#0F6FDE;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><svg class="w-3 h-3" style="color:#0F6FDE;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-[10px] text-text-muted">Read at 10:04 AM</span></div>
-                        <div class="flex gap-2 justify-end"><div class="rounded-xl rounded-tr-none px-3 py-2 text-xs text-white max-w-[80%]" style="background:#0F6FDE;">Received, thanks. I'll review and sign off by EOD. Attaching the consent form now.<br><span class="text-[10px] text-purple-100 mt-1 inline-block">&#128206; consent_form_chen.pdf</span></div><div class="w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center text-white text-[8px] font-bold" style="background:#6366F1;">RP</div></div>
-                      </div>
-                      <div class="flex items-center gap-2 px-3 py-2 rounded-lg text-[10px] font-mono" style="background:rgba(59,130,246,0.05);color:#0F6FDE;"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>Encrypted &bull; HIPAA audit logged &bull; Patient: Sarah Chen</div>
-                      <p class="text-xs text-text-secondary mt-3">Dr. Patel mentioned a consent form. < href="#" class="font-medium" style="color:#7C3AED;" onclick="event.preventDefault();selectMod('signature')">Send for E-Signature &rarr;</a></p>
-                      <button onclick="showWorkEmail()" class="btn-shimmer w-full mt-4 px-6 py-3 rounded-xl text-white text-sm font-semibold active:scale-[0.97]" style="background:#0F6FDE;box-shadow:0 4px 16px rgba(59,130,246,0.4);">Explore Your Dashboard &rarr;</button>
-                    </div>
-                  </div>
-                </div>
+              <div onclick="switchS4('engage')" data-s4-tab="engage" class="mod-tab flex items-center gap-3 px-4 py-3 rounded-xl">
+                <svg class="w-5 h-5 flex-shrink-0" style="color:#0F6FDE" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                <div class="flex flex-col"><span class="text-sm font-medium">Secure Comms</span><span class="text-[10px] text-text-muted leading-tight">850+ care teams</span></div>
               </div>
-
-              <!-- ── COLLECT SANDBOX ── -->
-              <div id="sb-collect" class="hidden glass-card rounded-2xl border border-border card-shadow-lg p-7">
-                <div class="flex items-center justify-between mb-5"><span class="text-[10px] font-mono uppercase tracking-widest font-semibold" style="color:#14B8A6;">Choose Template</span><span class="px-2.5 py-1 rounded-full text-[10px] font-mono" style="background:rgba(20,184,166,0.06);color:#14B8A6;">Preview Mode</span></div>
-                <div class="space-y-3">
-                  <label class="block rounded-xl border-2 p-4 cursor-pointer" style="border-color:rgba(20,184,166,0.3);background:rgba(20,184,166,0.04);"><input type="radio" name="cf" checked class="mr-2" style="accent-color:#14B8A6;" /><span class="text-sm font-medium text-text-primary">New Patient Intake</span><p class="text-xs text-text-secondary mt-1 ml-6">Demographics, insurance, medical history, consent</p></label>
-                  <label class="block rounded-xl border border-border bg-white p-4 cursor-pointer hover:border-teal-200 transition-colors"><input type="radio" name="cf" class="mr-2" style="accent-color:#14B8A6;" /><span class="text-sm font-medium text-text-primary">Specialist Referral Form</span><p class="text-xs text-text-secondary mt-1 ml-6">Referring provider info, clinical notes, insurance</p></label>
-                  <label class="block rounded-xl border border-border bg-white p-4 cursor-pointer hover:border-teal-200 transition-colors"><input type="radio" name="cf" class="mr-2" style="accent-color:#14B8A6;" /><span class="text-sm font-medium text-text-primary">HIPAA Authorization</span><p class="text-xs text-text-secondary mt-1 ml-6">Release of information with signature</p></label>
-                </div>
-                <div class="mt-4 rounded-xl border border-border bg-base p-4"><p class="text-[10px] font-mono text-text-muted mb-2">Form Preview</p><div class="space-y-2"><div class="flex items-center gap-2"><div class="w-3 h-3 rounded border" style="border-color:#14B8A6;background:rgba(20,184,166,0.1);"></div><span class="text-[11px] text-text-primary">Personal Info</span></div><div class="flex items-center gap-2"><div class="w-3 h-3 rounded border" style="border-color:#14B8A6;background:rgba(20,184,166,0.1);"></div><span class="text-[11px] text-text-primary">Insurance</span></div><div class="flex items-center gap-2"><div class="w-3 h-3 rounded border" style="border-color:#14B8A6;background:rgba(20,184,166,0.1);"></div><span class="text-[11px] text-text-primary">Medical History</span></div><div class="flex items-center gap-2"><div class="w-3 h-3 rounded border border-border"></div><span class="text-[11px] text-text-muted">Consent &amp; Signature</span></div></div></div>
-                <button onclick="sbSend('collect')" id="sb-collect-cta" class="btn-shimmer w-full mt-5 px-6 py-3.5 rounded-xl text-white text-sm font-semibold active:scale-[0.97]" style="background:#0F6FDE;box-shadow:0 4px 16px rgba(15,111,222,0.4);">Send Form</button>
-                <!-- Result area -->
-                <div id="sb-collect-result-area" class="mt-5 rounded-xl border border-border bg-base/50 p-4">
-                  <div id="sb-collect-skeleton" class="space-y-2">
-                    <div class="h-3 bg-floating rounded w-3/4"></div>
-                    <div class="h-3 bg-floating rounded w-1/2"></div>
-                    <div class="h-3 bg-floating rounded w-2/3"></div>
-                    <div class="h-3 bg-floating rounded w-1/3"></div>
-                  </div>
-                  <div id="sb-collect-live" class="hidden">
-                    <div class="flex items-center justify-between mb-4"><span class="text-[10px] font-mono uppercase tracking-widest font-semibold" style="color:#14B8A6;">Form Completion</span><span class="text-[10px] font-mono text-text-muted" id="sb-col-timer">0.0s</span></div>
-                    <div class="w-full h-1.5 rounded-full bg-floating overflow-hidden mb-4"><div id="sb-col-prog" class="h-full rounded-full" style="width:0%;background:linear-gradient(90deg,#5EEAD4,#14B8A6);transition:width 0.8s ease;"></div></div>
-                    <div id="sb-col-steps" class="space-y-0">
-                      <div class="sb-step flex items-center gap-3 py-2 opacity-30"><div class="w-6 h-6 rounded-full bg-floating flex items-center justify-center"><svg class="w-3 h-3 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-text-secondary">Form sent via SMS</span><span class="text-[10px] text-text-muted ml-auto">-</span></div>
-                      <div class="sb-step flex items-center gap-3 py-2 opacity-30"><div class="w-6 h-6 rounded-full bg-floating flex items-center justify-center"><svg class="w-3 h-3 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-text-secondary">Patient opened form</span><span class="text-[10px] text-text-muted ml-auto">-</span></div>
-                      <div class="sb-step flex items-center gap-3 py-2 opacity-30"><div class="w-6 h-6 rounded-full bg-floating flex items-center justify-center"><svg class="w-3 h-3 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-text-secondary">Personal info completed</span><span class="text-[10px] text-text-muted ml-auto">-</span></div>
-                      <div class="sb-step flex items-center gap-3 py-2 opacity-30"><div class="w-6 h-6 rounded-full bg-floating flex items-center justify-center"><svg class="w-3 h-3 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-text-secondary">Insurance verified: Blue Shield PPO &#10003;</span><span class="text-[10px] text-text-muted ml-auto">-</span></div>
-                      <div class="sb-step flex items-center gap-3 py-2 opacity-30"><div class="w-6 h-6 rounded-full bg-floating flex items-center justify-center"><svg class="w-3 h-3 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-text-secondary">Consent signed</span><span class="text-[10px] text-text-muted ml-auto">-</span></div>
-                    </div>
-                    <div id="sb-col-card" class="hidden mt-4 rounded-xl border-2 p-4" style="border-color:rgba(20,184,166,0.2);background:rgba(20,184,166,0.02);">
-                      <p class="text-[10px] font-mono mb-3" style="color:#14B8A6;">Completed Form</p>
-                      <div class="rounded-lg border border-border bg-white p-3 text-xs space-y-1.5">
-                        <div class="flex justify-between"><span class="text-text-muted">Patient</span><span class="text-text-primary font-medium">Jane Smith</span></div>
-                        <div class="flex justify-between"><span class="text-text-muted">DOB</span><span class="text-text-primary">06/22/1988</span></div>
-                        <div class="flex justify-between"><span class="text-text-muted">Insurance</span><span class="font-medium" style="color:#14B8A6;">Blue Shield PPO, Verified &#10003;, Copay: $25</span></div>
-                        <div class="flex justify-between"><span class="text-text-muted">Allergies</span><span class="text-text-primary">Penicillin (rash)</span></div>
-                        <div class="flex justify-between"><span class="text-text-muted">Medications</span><span class="text-text-primary">Lisinopril 10mg daily</span></div>
-                        <div class="flex justify-between"><span class="text-text-muted">Consent</span><span class="font-medium" style="color:#14B8A6;">Signed &#10003; at 10:07 AM</span></div>
-                      </div>
-                      <p class="text-[10px] text-text-muted mt-3 text-center">This data auto-populates into your EHR. No manual entry needed.</p>
-                      <button onclick="showWorkEmail()" class="btn-shimmer w-full mt-4 px-6 py-3 rounded-xl text-white text-sm font-semibold active:scale-[0.97]" style="background:#0F6FDE;box-shadow:0 4px 16px rgba(15,111,222,0.4);">Explore Your Dashboard &rarr;</button>
-                    </div>
-                  </div>
-                </div>
+              <div onclick="switchS4('signature')" data-s4-tab="signature" class="mod-tab flex items-center gap-3 px-4 py-3 rounded-xl">
+                <svg class="w-5 h-5 flex-shrink-0" style="color:#7C3AED" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
+                <div class="flex flex-col"><span class="text-sm font-medium">eSign</span><span class="text-[10px] text-text-muted leading-tight">1.2M docs signed</span></div>
               </div>
-
-              <!-- ── API SANDBOX ── -->
-              <div id="sb-api" class="hidden glass-card rounded-2xl border border-border card-shadow-lg p-7">
-                <div class="flex items-center justify-between mb-5"><span class="text-[10px] font-mono uppercase tracking-widest font-semibold" style="color:#64748B;">Your Credentials</span><span class="px-2.5 py-1 rounded-full text-[10px] font-mono" style="background:rgba(100,116,139,0.06);color:#64748B;">Preview Mode</span></div>
-                <div class="space-y-4">
-                  <div><label class="block text-xs font-medium text-text-primary mb-1.5">Sandbox API Key</label><div class="flex items-center gap-2 px-3 py-2.5 rounded-lg border border-border bg-base font-mono text-xs text-text-secondary"><span class="flex-1 truncate">df_sk_sandbox_4f8a9c2b1d7e3f6a...</span><button class="text-purple-core hover:opacity-80 text-xs font-medium font-body flex-shrink-0">Copy</button></div></div>
-                  <div><label class="block text-xs font-medium text-text-primary mb-1.5">Base URL</label><div class="px-3 py-2.5 rounded-lg border border-border bg-base font-mono text-xs text-text-secondary">https://api.sandbox.docflow.io/v1</div></div>
-                  <div><label class="block text-xs font-medium text-text-primary mb-1.5">Language</label><div class="flex gap-1.5"><span class="px-3 py-1.5 rounded-lg text-xs font-medium text-white" style="background:#64748B;">cURL</span><span class="px-3 py-1.5 rounded-lg text-xs text-text-muted border border-border cursor-pointer hover:border-gray-400">Python</span><span class="px-3 py-1.5 rounded-lg text-xs text-text-muted border border-border cursor-pointer hover:border-gray-400">Node.js</span><span class="px-3 py-1.5 rounded-lg text-xs text-text-muted border border-border cursor-pointer hover:border-gray-400">Java</span></div></div>
-                  <div><label class="block text-xs font-medium text-text-primary mb-1.5">Action</label><div class="space-y-1.5"><label class="flex items-center gap-2 px-3 py-2 rounded-lg border-2 cursor-pointer" style="border-color:rgba(100,116,139,0.3);background:rgba(100,116,139,0.03);"><input type="radio" name="api-action" checked style="accent-color:#64748B;" /><span class="text-xs text-text-primary">Send a Fax</span></label><label class="flex items-center gap-2 px-3 py-2 rounded-lg border border-border cursor-pointer hover:border-gray-300"><input type="radio" name="api-action" style="accent-color:#64748B;" /><span class="text-xs text-text-primary">Check Fax Status</span></label><label class="flex items-center gap-2 px-3 py-2 rounded-lg border border-border cursor-pointer hover:border-gray-300"><input type="radio" name="api-action" style="accent-color:#64748B;" /><span class="text-xs text-text-primary">Extract Document Data</span></label></div></div>
-                </div>
-                <button onclick="sbSend('api')" id="sb-api-cta" class="btn-shimmer w-full mt-5 px-6 py-3.5 rounded-xl text-white text-sm font-semibold active:scale-[0.97]" style="background:#0F6FDE;box-shadow:0 4px 16px rgba(15,111,222,0.4);">Run API Call</button>
-                <!-- Result area -->
-                <div id="sb-api-result-area" class="mt-5 rounded-xl border border-border bg-base/50 p-4">
-                  <div id="sb-api-skeleton" class="space-y-2">
-                    <div class="h-3 bg-floating rounded w-3/4"></div>
-                    <div class="h-3 bg-floating rounded w-1/2"></div>
-                    <div class="h-3 bg-floating rounded w-2/3"></div>
-                    <div class="h-3 bg-floating rounded w-1/3"></div>
-                  </div>
-                  <div id="sb-api-live" class="hidden">
-                    <div class="flex items-center justify-between mb-4"><span class="text-[10px] font-mono uppercase tracking-widest font-semibold" style="color:#64748B;">Response</span><span class="text-[10px] font-mono text-text-muted" id="sb-api-timer">0.0s</span></div>
-                    <div class="w-full h-1.5 rounded-full bg-floating overflow-hidden mb-4"><div id="sb-api-prog" class="h-full rounded-full" style="width:0%;background:linear-gradient(90deg,#94A3B8,#64748B);transition:width 0.8s ease;"></div></div>
-                    <div id="sb-api-steps" class="space-y-0">
-                      <div class="sb-step flex items-center gap-3 py-2 opacity-30"><div class="w-6 h-6 rounded-full bg-floating flex items-center justify-center"><svg class="w-3 h-3 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-text-secondary">Request sent</span><span class="text-[10px] text-text-muted ml-auto">-</span></div>
-                      <div class="sb-step flex items-center gap-3 py-2 opacity-30"><div class="w-6 h-6 rounded-full bg-floating flex items-center justify-center"><svg class="w-3 h-3 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-text-secondary">Authenticated</span><span class="text-[10px] text-text-muted ml-auto">-</span></div>
-                      <div class="sb-step flex items-center gap-3 py-2 opacity-30"><div class="w-6 h-6 rounded-full bg-floating flex items-center justify-center"><svg class="w-3 h-3 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-text-secondary">Fax queued &amp; delivered</span><span class="text-[10px] text-text-muted ml-auto">-</span></div>
-                      <div class="sb-step flex items-center gap-3 py-2 opacity-30"><div class="w-6 h-6 rounded-full bg-floating flex items-center justify-center"><svg class="w-3 h-3 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><span class="text-xs text-text-secondary">200 OK: Response ready</span><span class="text-[10px] text-text-muted ml-auto">-</span></div>
-                    </div>
-                    <div id="sb-api-card" class="hidden mt-4">
-                      <div class="rounded-xl border border-border bg-[#1E293B] p-4 font-mono text-xs leading-relaxed mb-3"><span style="color:#4ADE80;">200 OK</span> <span style="color:#94A3B8;">// Response</span><br><span style="color:#CBD5E1;">{</span><br><span style="color:#CBD5E1;">&nbsp;&nbsp;"status": </span><span style="color:#4ADE80;">"success"</span><span style="color:#CBD5E1;">,</span><br><span style="color:#CBD5E1;">&nbsp;&nbsp;"data": {</span><br><span style="color:#CBD5E1;">&nbsp;&nbsp;&nbsp;&nbsp;"fax_id": </span><span style="color:#A78BFA;">"fax_9x8k2m"</span><span style="color:#CBD5E1;">,</span><br><span style="color:#CBD5E1;">&nbsp;&nbsp;&nbsp;&nbsp;"to": </span><span style="color:#A78BFA;">"+15550001234"</span><span style="color:#CBD5E1;">,</span><br><span style="color:#CBD5E1;">&nbsp;&nbsp;&nbsp;&nbsp;"pages": </span><span style="color:#38BDF8;">3</span><span style="color:#CBD5E1;">,</span><br><span style="color:#CBD5E1;">&nbsp;&nbsp;&nbsp;&nbsp;"status": </span><span style="color:#4ADE80;">"delivered"</span><span style="color:#CBD5E1;">,</span><br><span style="color:#CBD5E1;">&nbsp;&nbsp;&nbsp;&nbsp;"delivery_time_ms": </span><span style="color:#38BDF8;">1823</span><br><span style="color:#CBD5E1;">&nbsp;&nbsp;}</span><br><span style="color:#CBD5E1;">}</span></div>
-                      <div class="rounded-xl border border-border bg-[#1E293B] p-4 font-mono text-xs leading-relaxed"><span style="color:#94A3B8;">// Webhook event your callback_url receives:</span><br><span style="color:#CBD5E1;">{</span><br><span style="color:#CBD5E1;">&nbsp;&nbsp;"event": </span><span style="color:#A78BFA;">"fax.delivered"</span><span style="color:#CBD5E1;">,</span><br><span style="color:#CBD5E1;">&nbsp;&nbsp;"fax_id": </span><span style="color:#A78BFA;">"fax_9x8k2m"</span><span style="color:#CBD5E1;">,</span><br><span style="color:#CBD5E1;">&nbsp;&nbsp;"timestamp": </span><span style="color:#A78BFA;">"2026-03-24T10:03:02Z"</span><br><span style="color:#CBD5E1;">}</span></div>
-                      <button onclick="showWorkEmail()" class="btn-shimmer w-full mt-4 px-6 py-3 rounded-xl text-white text-sm font-semibold active:scale-[0.97]" style="background:#0F6FDE;box-shadow:0 4px 16px rgba(15,111,222,0.4);">Explore Your Dashboard &rarr;</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
             </div>
-
-            <!-- Right: demo video -->
+            <!-- Right: sandbox + video -->
             <div>
-              <div class="video-player h-full" id="video-box" style="min-height:100%;">
-                <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-purple-core/20 to-purple-core/5">
-                  <div class="text-center"><p class="text-white/50 text-xs font-mono mb-2" id="video-label">How to send a fax in Docflow</p><svg class="h-5 mx-auto opacity-30" viewBox="0 0 140 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="4" width="20" height="20" rx="4" fill="#0F6FDE"/><path d="M6 11l4 4 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 15V9" stroke="white" stroke-width="2" stroke-linecap="round"/><text x="26" y="20" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="18" fill="white">Docflow</text></svg><span class="absolute bottom-16 right-4 px-2 py-0.5 rounded text-[9px] font-mono text-white/40 bg-white/10">60 sec</span></div>
+              <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 items-stretch" style="min-height:420px;">
+                <div class="lg:col-span-2">
+                  <div class="bg-white rounded-2xl border border-border card-shadow-lg p-7 h-full relative">
+                    <span class="absolute top-5 right-5 text-[10px] font-mono text-text-muted uppercase tracking-widest font-semibold">Sandbox</span>
+                    <button onclick="showWorkEmail()" class="btn-shimmer absolute bottom-7 left-7 right-7 px-6 py-3.5 rounded-xl bg-purple-core text-white text-sm font-semibold active:scale-[0.97]" style="box-shadow:0 4px 16px rgba(15,111,222,0.4);">Sign up with email &rarr;</button>
+                  </div>
                 </div>
-                <div class="play-btn"><svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-                <div class="video-progress"><div class="video-progress-fill"></div></div>
+                <div class="lg:col-span-1">
+                  <div class="video-player h-full" id="video-box" style="min-height:100%;">
+                    <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-purple-core/20 to-purple-core/5">
+                      <div class="text-center"><p class="text-white/50 text-xs font-mono mb-2" id="video-label">How to send a fax in Docflow</p><svg class="h-5 mx-auto opacity-30" viewBox="0 0 140 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="4" width="20" height="20" rx="4" fill="#0F6FDE"/><path d="M6 11l4 4 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 15V9" stroke="white" stroke-width="2" stroke-linecap="round"/><text x="26" y="20" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="18" fill="white">Docflow</text></svg><span class="absolute bottom-16 right-4 px-2 py-0.5 rounded text-[9px] font-mono text-white/40 bg-white/10">60 sec</span></div>
+                    </div>
+                    <div class="play-btn"><svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                    <div class="video-progress"><div class="video-progress-fill"></div></div>
+                  </div>
+                </div>
               </div>
-              <p class="text-xs text-text-muted mt-3 text-right">Watch the 60-second walkthrough</p>
             </div>
           </div>
         </div>
@@ -722,31 +448,32 @@
           </div>
         </div>
 
-        <div class="strategy-tip mt-10 max-w-[700px] mx-auto"><div class="tip-content"><div class="tip-label">PLG Strategy: Sandbox</div><p><strong>Single-screen sandbox</strong> keeps the form visible while the result animates in-place below. No panel swapping, no jarring size changes. Users configure real inputs (recipient, document, label) creating <strong>psychological ownership</strong> that increases conversion. The <strong>1.8s timer</strong> reinforces speed. <strong>Work email gate</strong> appears post-activation because conversion is 3x higher after the user has experienced value. <strong>AI insight teasers</strong> create cross-sell desire between modules. <strong>Demo video</strong> reduces cognitive load for first-time users.</p></div></div>
+        <div class="strategy-tip mt-6 max-w-[700px] mx-auto"><div class="tip-content"><div class="tip-label">PLG Strategy: Sandbox</div><p><strong>Single-screen sandbox</strong> keeps the form visible while the result animates in-place below. No panel swapping, no jarring size changes. Users configure real inputs (recipient, document, label) creating <strong>psychological ownership</strong> that increases conversion. The <strong>1.8s timer</strong> reinforces speed. <strong>Work email gate</strong> appears post-activation because conversion is 3x higher after the user has experienced value. <strong>AI insight teasers</strong> create cross-sell desire between modules. <strong>Demo video</strong> reduces cognitive load for first-time users.</p></div></div>
       </div>
     </div>
 
     <!-- ===== SCREEN 5: EXPLORE ===== -->
-    <div id="screen-5" class="screen-panel flex-1 flex-col items-center px-4 py-10">
+    <div id="screen-5" class="screen-panel flex-1 flex-col items-center px-4 py-4">
       <div class="w-full max-w-[880px] mx-auto">
-        <div class="glass-card rounded-2xl border border-border card-shadow p-5 flex items-center justify-between mb-8" style="background:linear-gradient(90deg,rgba(15,111,222,0.04),rgba(255,255,255,0.78));">
+        <div class="glass-card rounded-2xl border border-border card-shadow p-4 flex items-center justify-between mb-5" style="background:linear-gradient(90deg,rgba(15,111,222,0.04),rgba(255,255,255,0.78));">
           <div class="flex items-center gap-5"><div class="w-12 h-12 rounded-xl bg-purple-subtle flex items-center justify-center"><svg class="w-6 h-6 text-purple-core" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div><p class="text-[1rem] font-semibold text-text-primary">14 days of full access</p><p class="text-sm text-text-secondary">Every module. Every feature. No limits.</p></div></div>
           <div class="w-36"><div class="w-full h-2 rounded-full bg-floating overflow-hidden"><div class="h-full rounded-full progress-fill" style="width:1%"></div></div></div>
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
-          <div class="flex"><div class="glass-card rounded-2xl border border-border card-shadow p-8 flex-1">
-            <div class="flex items-center justify-between mb-6"><h2 class="font-display text-xl font-semibold text-text-primary" style="letter-spacing:-0.02em;">Your next steps</h2><span class="text-[10px] font-mono text-purple-core uppercase tracking-widest font-semibold">Based on your workflow</span></div>
-            <div class="space-y-3" id="nsl">
-              <div class="checklist-item flex items-start gap-5 p-5 rounded-xl border border-border bg-white cursor-pointer group"><div class="w-10 h-10 rounded-xl bg-purple-core flex items-center justify-center flex-shrink-0 pulse-ring"><svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg></div><div class="flex-1"><h3 id="ns1t" class="text-[1rem] font-semibold text-text-primary group-hover:text-purple-core transition-colors duration-200">Set up number porting</h3><p id="ns1d" class="text-sm text-text-secondary mt-1">Transfer your existing fax number to Docflow</p></div><svg class="w-5 h-5 text-text-muted group-hover:text-purple-core transition-colors duration-200 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></div>
-              <div class="checklist-item flex items-start gap-5 p-5 rounded-xl border border-border bg-white cursor-pointer group"><div class="w-10 h-10 rounded-xl bg-purple-subtle flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 text-purple-core" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg></div><div class="flex-1"><h3 id="ns2t" class="text-[1rem] font-semibold text-text-primary group-hover:text-purple-core transition-colors duration-200">Configure document workflows</h3><p id="ns2d" class="text-sm text-text-secondary mt-1">Set up routing, classification, and triggers</p></div><svg class="w-5 h-5 text-text-muted group-hover:text-purple-core transition-colors duration-200 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></div>
-              <div class="checklist-item flex items-start gap-5 p-5 rounded-xl border border-border bg-white cursor-pointer group"><div class="w-10 h-10 rounded-xl bg-purple-subtle flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 text-purple-core" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg></div><div class="flex-1"><h3 id="ns3t" class="text-[1rem] font-semibold text-text-primary group-hover:text-purple-core transition-colors duration-200">Invite your team</h3><p id="ns3d" class="text-sm text-text-secondary mt-1">Teams that collaborate retain 2.5x better</p></div><svg class="w-5 h-5 text-text-muted group-hover:text-purple-core transition-colors duration-200 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></div>
-              <div id="ns4-wrap" class="checklist-item flex items-start gap-5 p-5 rounded-xl border border-border bg-white cursor-pointer group" onclick="goToScreen(3);setTimeout(()=>switchPreview(S._ns4mod||'signature'),100)"><div class="w-10 h-10 rounded-xl bg-purple-subtle flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 text-purple-core" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg></div><div class="flex-1"><h3 id="ns4t" class="text-[1rem] font-semibold text-text-primary group-hover:text-purple-core transition-colors duration-200">Explore another module</h3><p id="ns4d" class="text-sm text-text-secondary mt-1">Try E-Signature, Automate, or Engage next</p></div><svg class="w-5 h-5 text-text-muted group-hover:text-purple-core transition-colors duration-200 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></div>
-            </div>
+          <div class="flex"><div class="glass-card rounded-2xl border border-border card-shadow p-5 flex-1">
+            <div class="flex items-center justify-between mb-4"><h2 class="font-display text-lg font-semibold text-text-primary" style="letter-spacing:-0.02em;">Your next steps</h2><span class="text-[10px] font-body text-purple-core uppercase tracking-widest font-semibold">Based on your workflow</span></div>
+            <div class="hidden" id="nsl"><span id="ns1t"></span><span id="ns1d"></span><span id="ns2t"></span><span id="ns2d"></span><span id="ns3t"></span><span id="ns3d"></span><span id="ns4t"></span><span id="ns4d"></span><span id="ns4-wrap"></span></div>
           </div></div>
-          <div class="space-y-5">
-            <div class="glass-card rounded-2xl border border-border card-shadow p-6"><h3 class="text-xs font-semibold text-text-muted uppercase tracking-widest mb-4">Platform</h3><div class="space-y-1" id="plat-list"></div></div>
+          <div class="space-y-3">
+            <div class="glass-card rounded-2xl border border-border card-shadow p-4">
+              <div class="flex items-center gap-2 mb-3">
+                <svg class="h-5 w-5 flex-shrink-0" viewBox="0 0 24 24" fill="none"><rect x="0" y="0" width="24" height="24" rx="5" fill="#0F6FDE"/><path d="M7 11l5 5 5-5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 16V9" stroke="white" stroke-width="2.2" stroke-linecap="round"/></svg>
+                <span class="font-display text-sm font-bold text-text-primary" style="letter-spacing:-0.02em;">Docflow Products</span>
+              </div>
+              <div class="space-y-1" id="plat-list"></div>
+            </div>
             <!-- Work email CTA (shown for sandbox path users) -->
-            <div id="explore-workemail-cta" class="hidden glass-card rounded-2xl border-2 border-purple-core/20 card-shadow-glow p-6">
+            <div id="explore-workemail-cta" class="hidden glass-card rounded-2xl border-2 border-purple-core/20 card-shadow-glow p-4">
               <div class="flex items-center gap-2 mb-3"><svg class="w-5 h-5 text-purple-core" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg><h3 class="text-sm font-semibold text-text-primary">Ready to go live?</h3></div>
               <p class="text-xs text-text-secondary leading-relaxed mb-4">Connect your work email to start using Docflow with your team. Everything you tried in the sandbox works with real data.</p>
               <div class="space-y-2 mb-4">
@@ -757,29 +484,12 @@
               <div class="grid grid-cols-2 gap-1.5 mt-4"><span class="flex items-center gap-1 text-[10px] text-text-secondary"><svg class="w-3 h-3 text-purple-core" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Real fax numbers</span><span class="flex items-center gap-1 text-[10px] text-text-secondary"><svg class="w-3 h-3 text-purple-core" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Team invitations</span><span class="flex items-center gap-1 text-[10px] text-text-secondary"><svg class="w-3 h-3 text-purple-core" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>EHR integration</span><span class="flex items-center gap-1 text-[10px] text-text-secondary"><svg class="w-3 h-3 text-purple-core" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>14-day full trial</span></div>
             </div>
             <!-- Quick Actions (shown for direct/work-email path users) -->
-            <div id="explore-quick-actions" class="hidden glass-card rounded-2xl border border-border card-shadow p-6"><h3 class="text-xs font-semibold text-text-muted uppercase tracking-widest mb-4">Quick Actions</h3>
-              <div class="grid grid-cols-2 gap-3">
-                <button class="flex flex-col items-center gap-2 p-4 rounded-xl hover:bg-base transition-colors duration-200 group"><div class="w-12 h-12 rounded-xl bg-purple-subtle flex items-center justify-center group-hover:bg-purple-core/10"><svg class="w-6 h-6 text-purple-core" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg></div><span class="text-xs text-text-secondary font-medium">Send Fax</span></button>
-                <button class="flex flex-col items-center gap-2 p-4 rounded-xl hover:bg-base transition-colors duration-200 group"><div class="w-12 h-12 rounded-xl bg-purple-subtle flex items-center justify-center group-hover:bg-purple-core/10"><svg class="w-6 h-6 text-purple-core" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg></div><span class="text-xs text-text-secondary font-medium">Upload</span></button>
-                <button class="flex flex-col items-center gap-2 p-4 rounded-xl hover:bg-base transition-colors duration-200 group"><div class="w-12 h-12 rounded-xl bg-purple-subtle flex items-center justify-center group-hover:bg-purple-core/10"><svg class="w-6 h-6 text-purple-core" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div><span class="text-xs text-text-secondary font-medium">Templates</span></button>
-                <button class="flex flex-col items-center gap-2 p-4 rounded-xl hover:bg-base transition-colors duration-200 group"><div class="w-12 h-12 rounded-xl bg-purple-subtle flex items-center justify-center group-hover:bg-purple-core/10"><svg class="w-6 h-6 text-purple-core" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div><span class="text-xs text-text-secondary font-medium">Settings</span></button>
-              </div>
-            </div>
-            <!-- Attribution (moved from segmentation to reduce friction) -->
-            <div id="s5-attribution" class="glass-card rounded-2xl border border-border card-shadow p-5">
-              <p class="text-xs font-medium text-text-primary mb-2">One last thing — how'd you find us?</p>
-              <div class="flex flex-wrap gap-1.5">
-                <button onclick="segPill('attr','search',this);this.parentElement.parentElement.style.opacity='0.5'" class="seg-pill px-3 py-1.5 rounded-full text-[11px] font-medium border border-border bg-white hover:border-purple-core/30 transition-colors cursor-pointer">Search</button>
-                <button onclick="segPill('attr','g2',this);this.parentElement.parentElement.style.opacity='0.5'" class="seg-pill px-3 py-1.5 rounded-full text-[11px] font-medium border border-border bg-white hover:border-purple-core/30 transition-colors cursor-pointer">G2</button>
-                <button onclick="segPill('attr','colleague',this);this.parentElement.parentElement.style.opacity='0.5'" class="seg-pill px-3 py-1.5 rounded-full text-[11px] font-medium border border-border bg-white hover:border-purple-core/30 transition-colors cursor-pointer">Colleague</button>
-                <button onclick="segPill('attr','event',this);this.parentElement.parentElement.style.opacity='0.5'" class="seg-pill px-3 py-1.5 rounded-full text-[11px] font-medium border border-border bg-white hover:border-purple-core/30 transition-colors cursor-pointer">Event</button>
-                <button onclick="segPill('attr','social',this);this.parentElement.parentElement.style.opacity='0.5'" class="seg-pill px-3 py-1.5 rounded-full text-[11px] font-medium border border-border bg-white hover:border-purple-core/30 transition-colors cursor-pointer">Social</button>
-              </div>
+            <div id="explore-quick-actions" class="hidden glass-card rounded-2xl border border-border card-shadow p-4"><h3 class="text-xs font-semibold text-text-muted uppercase tracking-widest">Quick Actions</h3>
             </div>
             <!-- Social proof: Teams like yours -->
-            <div class="glass-card rounded-2xl border border-border card-shadow p-5 mt-5">
-              <h3 class="text-xs font-semibold text-text-muted uppercase tracking-widest mb-3">Teams like yours</h3>
-              <div class="space-y-3">
+            <div class="glass-card rounded-2xl border border-border card-shadow p-4">
+              <h3 class="text-xs font-semibold text-text-muted uppercase tracking-widest mb-2">Teams like yours</h3>
+              <div class="space-y-2">
                 <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-purple-subtle flex items-center justify-center text-[10px] font-bold text-purple-core">MG</div><div><p class="text-xs font-medium text-text-primary">Mercy General</p><p class="text-[10px] text-text-muted">Activated Fax + Automate this week</p></div></div>
                 <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-purple-subtle flex items-center justify-center text-[10px] font-bold text-purple-core">PH</div><div><p class="text-xs font-medium text-text-primary">Pacific Health Partners</p><p class="text-[10px] text-text-muted">Ported 12 fax numbers yesterday</p></div></div>
                 <div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-purple-subtle flex items-center justify-center text-[10px] font-bold text-purple-core">SC</div><div><p class="text-xs font-medium text-text-primary">Summit Care Network</p><p class="text-[10px] text-text-muted">Sent 340 faxes in their first week</p></div></div>
@@ -787,42 +497,85 @@
             </div>
           </div>
         </div>
-        <div class="strategy-tip mt-8"><div class="tip-content"><div class="tip-label">PLG Strategy: Explore &amp; Expand</div><p><strong>Recommended next steps</strong> create the second activation loop. Steps are <strong>segment-personalized</strong> based on the module the user activated in the sandbox. <strong>Work email transition</strong> (previous screen) captures organizational identity for PQL scoring and team-based expansion. Users who provided a work email see team invitation as a next step; those who skipped see it gated. <strong>Platform sidebar</strong> shows product depth , unexplored modules create FOMO driving cross-sell. <strong>Trial countdown</strong> creates urgency without a hard paywall.</p></div></div>
+        <div class="strategy-tip mt-5"><div class="tip-content"><div class="tip-label">PLG Strategy: Explore &amp; Expand</div><p><strong>Recommended next steps</strong> create the second activation loop. Steps are <strong>segment-personalized</strong> based on the module the user activated in the sandbox. <strong>Work email transition</strong> (previous screen) captures organizational identity for PQL scoring and team-based expansion. Users who provided a work email see team invitation as a next step; those who skipped see it gated. <strong>Platform sidebar</strong> shows product depth , unexplored modules create FOMO driving cross-sell. <strong>Trial countdown</strong> creates urgency without a hard paywall.</p></div></div>
       </div>
+    </div>
+
+    <!-- ===== SCREEN 6: EMAIL GATE (SIGN UP) ===== -->
+    <div id="screen-6" class="screen-panel flex-1 flex-col items-center justify-center px-4 py-3">
+      <div class="w-full max-w-[400px] mx-auto">
+        <div class="text-center mb-3">
+          <div class="flex items-center justify-center gap-2 mb-2">
+            <svg class="h-5 w-5 flex-shrink-0" viewBox="0 0 24 24" fill="none"><rect x="0" y="0" width="24" height="24" rx="5" fill="#0F6FDE"/><path d="M7 11l5 5 5-5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 16V9" stroke="white" stroke-width="2.2" stroke-linecap="round"/></svg>
+            <span class="font-display text-[1rem] font-bold text-text-primary" style="letter-spacing:-0.02em;">Docflow</span>
+          </div>
+          <h1 class="font-display text-xl font-semibold text-text-primary leading-tight" style="letter-spacing:-0.03em;">Create your account</h1>
+        </div>
+        <div class="glass-card rounded-2xl border border-border card-shadow-lg p-5">
+          <div class="flex gap-3">
+            <button class="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-border bg-white hover:bg-base transition-colors duration-200 active:scale-[0.97]"><svg class="w-5 h-5" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg><span class="text-sm font-medium text-text-primary">Google</span></button>
+            <button class="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-border bg-white hover:bg-base transition-colors duration-200 active:scale-[0.97]"><svg class="w-5 h-5" viewBox="0 0 24 24"><path fill="#00A4EF" d="M11.4 24H0V12.6h11.4V24z"/><path fill="#FFB900" d="M11.4 11.4H0V0h11.4v11.4z"/><path fill="#F25022" d="M24 11.4H12.6V0H24v11.4z"/><path fill="#7FBA00" d="M24 24H12.6V12.6H24V24z"/></svg><span class="text-sm font-medium text-text-primary">Microsoft</span></button>
+          </div>
+          <div class="flex items-center gap-3 my-3"><div class="flex-1 h-px bg-border"></div><span class="text-xs text-text-muted">or continue with email</span><div class="flex-1 h-px bg-border"></div></div>
+          <div class="space-y-3">
+            <div><label for="nameInput" class="block text-sm font-medium text-text-primary mb-1">Full name</label><input id="nameInput" type="text" autocomplete="name" placeholder="Jane Smith" class="form-input w-full px-4 py-2.5 rounded-xl border border-border bg-white text-sm text-text-primary placeholder:text-text-muted transition-colors duration-200"/></div>
+            <div>
+              <label for="emailInput" class="block text-sm font-medium text-text-primary mb-1">Email</label>
+              <input id="emailInput" type="email" autocomplete="email" placeholder="you@yourclinic.com" class="form-input w-full px-4 py-2.5 rounded-xl border border-border bg-white text-sm text-text-primary placeholder:text-text-muted transition-colors duration-200"/>
+              <label class="flex items-center gap-2 mt-1.5 cursor-pointer"><input type="checkbox" id="personalIsWorkCb" onchange="handlePersonalIsWork()" class="rounded border-border" style="accent-color:#0F6FDE;"/><span class="text-xs text-text-secondary">This personal email is also my work email</span></label>
+            </div>
+            <div><label for="passwordInput" class="block text-sm font-medium text-text-primary mb-1">Password</label><input type="password" id="passwordInput" autocomplete="new-password" oninput="updatePwStr()" placeholder="Create a password" class="form-input w-full px-4 py-2.5 rounded-xl border border-border bg-white text-sm text-text-primary placeholder:text-text-muted transition-colors duration-200"/><div class="flex gap-1 mt-1.5"><div id="str1" class="strength-bar h-1 rounded-full bg-floating flex-1"></div><div id="str2" class="strength-bar h-1 rounded-full bg-floating flex-1"></div><div id="str3" class="strength-bar h-1 rounded-full bg-floating flex-1"></div><div id="str4" class="strength-bar h-1 rounded-full bg-floating flex-1"></div></div><p id="strTxt" class="text-[11px] text-text-muted mt-1"></p></div>
+          </div>
+          <button id="signupBtn" onclick="handleSignup()" class="btn-shimmer w-full mt-3 px-6 py-2.5 rounded-xl bg-purple-core text-white text-sm font-semibold active:scale-[0.97]" style="box-shadow:0 4px 16px rgba(15,111,222,0.4);">Create Account</button>
+          <p class="text-center text-[11px] text-text-muted mt-2">By signing up, you agree to our <a href="#" class="text-purple-core hover:opacity-80">Terms of Service</a> and <a href="#" class="text-purple-core hover:opacity-80">Privacy Policy</a></p>
+          <div class="flex items-center justify-center gap-4 mt-3">
+            <span class="inline-flex items-center gap-1 text-[10px] text-text-muted"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>HIPAA</span>
+            <span class="inline-flex items-center gap-1 text-[10px] text-text-muted"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>SOC 2</span>
+            <span class="inline-flex items-center gap-1 text-[10px] text-text-muted"><svg class="w-3 h-3 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>4.8/5 on G2</span>
+          </div>
+          <p class="text-center text-sm text-text-secondary mt-2">Already have an account? <a href="#" class="text-purple-core font-medium hover:opacity-80">Sign in</a></p>
+        </div>
+        <p class="text-center text-xs text-text-muted mt-2">Enterprise? <a href="#" class="text-purple-core hover:opacity-80">Talk to our team</a></p>
+      </div>
+      <div class="strategy-tip max-w-[420px] mx-auto mt-5"><div class="tip-content"><div class="tip-label">PLG Strategy: Post-Value Email Gate</div><p><strong>Email is asked after sandbox activation</strong>, not before. The user has already experienced value, so conversion is 3x higher. <strong>SSO buttons</strong> (Google/Microsoft) serve dual purpose: convenience + enterprise detection. A @largeclinic.org Microsoft login is a PQL signal. Personal email is accepted with a smaller cap. <strong>Email type detection</strong> powers conditional profiling on the next screen.</p></div></div>
     </div>
   </div>
 
   <script>
-    let S={screen:1,mod:'fax',seg:{},triedMods:new Set()},ann=false;
+    let S={screen:1,mod:'fax',path:null,emailType:null,seg:{},triedMods:new Set()},ann=false;
     const roles={healthcare:[{v:'ops',l:'Operations or Administration'},{v:'clinical',l:'Clinical'},{v:'legal',l:'Legal or Compliance'},{v:'it',l:'Information Technology'},{v:'finance',l:'Finance'}],legal:[{v:'paralegal',l:'Paralegal / Legal Ops'},{v:'attorney',l:'Attorney'},{v:'admin',l:'Administration'},{v:'it',l:'IT'}],government:[{v:'admin',l:'Administration'},{v:'records',l:'Records'},{v:'it',l:'IT'},{v:'compliance',l:'Compliance'}],other:[{v:'ops',l:'Operations'},{v:'it',l:'IT'},{v:'admin',l:'Admin'},{v:'exec',l:'Executive'}]};
     const MC={fax:{title:'Send a fax in seconds',sub:"See how fast document delivery can be. This is your sandbox, nothing real is sent.",sb:'sb-fax',vl:'Send a fax in under 2 seconds',deep:true},signature:{title:'Collect a signature in seconds',sub:"See how fast you can get documents signed. Sandbox mode, no real emails sent.",sb:'sb-signature',vl:'Collect signatures in minutes',deep:true},automate:{title:'Watch AI process a document',sub:'See how Docflow reads, classifies, and routes documents automatically.',sb:'sb-automate',vl:'AI processes documents in seconds',deep:true},api:{title:'Make your first API call',sub:'Test the Docflow API with real responses. Sandbox mode, no production data affected.',sb:'sb-api',vl:'Your first API call in 60 seconds',deep:true},engage:{title:'Send a secure message',sub:'See how secure messaging replaces phone tag. Sandbox mode, no real messages sent.',sb:'sb-engage',vl:'Replace phone tag with secure messaging',deep:true},collect:{title:'Build a patient intake form',sub:'See how patients complete forms on their phones before they arrive.',sb:'sb-collect',vl:'Patient intake, before they arrive',deep:true}};
     const NS={fax:[{t:'Set up number porting',d:'Transfer your existing fax number to Docflow'},{t:'Configure document workflows',d:'Set up routing, classification, and triggers'},{t:'Invite your team',d:'Teams that collaborate retain 2.5x better'}],signature:[{t:'Create a signing template',d:'Build reusable templates for common documents'},{t:'Set up signing workflows',d:'Automate multi-party signing with reminders'},{t:'Invite your team',d:'Enable your team to send signature requests'}],automate:[{t:'Connect your fax inbox',d:'Auto-process every incoming fax with AI'},{t:'Create custom extraction rules',d:'Define the fields AI should pull from your documents'},{t:'Set up routing rules',d:'Route documents to the right team automatically'}],engage:[{t:'Add your team contacts',d:'Import providers, nurses, and staff into secure messaging'},{t:'Set up patient messaging',d:'Enable two-way SMS with patients'},{t:'Configure escalation rules',d:'Auto-escalate unanswered messages after 15 minutes'}],collect:[{t:'Customize your intake form',d:'Add your practice logo, fields, and consent language'},{t:'Connect insurance verification',d:'Auto-verify patient coverage in real-time'},{t:'Set up appointment reminders',d:'Send SMS reminders with form links before visits'}],api:[{t:'Set up webhooks',d:'Get real-time notifications on fax delivery events'},{t:'Configure audit logs',d:'HIPAA-compliant logging for every API call'},{t:'Explore batch API',d:'High-volume fax processing endpoint'}],default:[{t:'Explore templates',d:'Browse pre-built templates for your industry'},{t:'Set up team workspace',d:'Organize and invite collaborators'},{t:'Connect integrations',d:'Link Docflow to your existing tools'}]};
+
+    // Map screen IDs to stepper steps: Choose(1)→Try(2)→SignUp(3)→Profile(4)→Dashboard(5)
+    const screenToStep={1:1, 2:4, 3:2, 4:2, 5:5, 6:3};
 
     function goToScreen(n){
       S.screen=n;
       document.querySelectorAll('.screen-panel').forEach(p=>p.classList.remove('active'));
       const el=document.getElementById('screen-'+n);
       if(el){void el.offsetWidth;el.classList.add('active');}
-      document.querySelectorAll('.step-btn').forEach(b=>{b.classList.remove('step-btn-active');b.classList.add('text-text-secondary');});
-      const ab=document.querySelector(`[data-step-btn="${n}"]`);
-      if(ab){ab.classList.add('step-btn-active');ab.classList.remove('text-text-secondary');}
-      // Update arrow stepper
+      // Update arrow stepper based on mapped step
+      const currentStep=screenToStep[n]||1;
       document.querySelectorAll('.step-item').forEach(item=>{
         const step=parseInt(item.dataset.step);
         const circle=item.querySelector('.step-circle');
         item.classList.remove('active','completed');
         circle.classList.remove('active','completed');
-        if(step<n){item.classList.add('completed');circle.classList.add('completed');circle.innerHTML='<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';}
-        else if(step===n){item.classList.add('active');circle.classList.add('active');circle.textContent=step;}
+        if(step<currentStep){item.classList.add('completed');circle.classList.add('completed');circle.innerHTML='<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';}
+        else if(step===currentStep){item.classList.add('active');circle.classList.add('active');circle.textContent=step;}
         else{circle.textContent=step;}
       });
-      if(n===3){if(Object.keys(S.seg).length>0)setTimeout(autoRecommend,200);else setTimeout(defaultRecommend,200);}
-      if(n===4)setupS4();if(n===5)setupS5();
+      // Screen-specific setup
+      if(n===3){if(S.mod)setTimeout(()=>switchPreview(S.mod),100);else setTimeout(defaultRecommend,200);}
+      if(n===4)setupS4();
+      if(n===2)setupProfiling();
+      if(n===5)setupS5();
       window.scrollTo({top:0,behavior:'smooth'});
       if(typeof saveState==='function') saveState();
     }
 
-    const segRevealOrder=['industry','role','size','title'];
+    const segRevealOrder=['industry','role','size','title','hdyhau'];
     function segPill(field,value,btn){
       S.seg[field]=value;
       // Highlight selected pill in this group — handle both old-style (class-swap) and new enhanced pills
@@ -872,8 +625,9 @@
       // Show Continue button after 4+ fields answered
       // Update progress label
       const progLabel=document.getElementById('seg-progress-label');
-      if(progLabel){const labels=['','1 of 4','2 of 4 — halfway there','3 of 4 — almost done','Your personalized setup is ready'];progLabel.textContent=labels[Math.min(answered,4)]||'';}
-      if(answered>=3){
+      if(progLabel){const labels=['','1 of 5','2 of 5','3 of 5 — halfway there','4 of 5 — almost done','Your personalized setup is ready'];progLabel.textContent=labels[Math.min(answered,5)]||'';}
+      const minAnswers=S.emailType==='work'?2:4;
+      if(answered>=minAnswers){
         const cWrap=document.getElementById('seg-continue-wrap');
         if(cWrap && !cWrap.classList.contains('revealed')){
           setTimeout(()=>{
@@ -940,13 +694,14 @@
     }
 
     function switchPreview(mod){
-      S.mod=mod;
+      S.mod=mod;S._s3mod=mod;
       document.querySelectorAll('.mod-tab').forEach(t=>{t.classList.remove('active');t.setAttribute('aria-selected','false');t.setAttribute('tabindex','-1');});
       const activeTab=document.querySelector(`[data-mod-tab="${mod}"]`);
       activeTab.classList.add('active');activeTab.setAttribute('aria-selected','true');activeTab.setAttribute('tabindex','0');
-      document.querySelectorAll('.preview-panel').forEach(p=>p.classList.remove('active'));
-      const pp=document.getElementById('preview-'+mod);
-      if(pp){void pp.offsetWidth;pp.classList.add('active');}
+      // Update video label for selected module
+      const c=MC[mod]||MC.fax;
+      const vl=document.getElementById('s3-video-label');
+      if(vl)vl.textContent=c.vl;
     }
 
     function jtbdSelect(mod,btn){
@@ -977,7 +732,7 @@
       if(ind==='healthcare'&&(role==='ops'||role==='admin'))rec='fax';
       else if(ind==='healthcare'&&role==='clinical')rec='automate';
       else if(ind==='legal'&&role==='paralegal')rec='signature';
-      else if(role==='it')rec='api';
+      else if(role==='it')rec='automate';
       // Apply recommendation
       const tab=document.querySelector(`[data-mod-tab="${rec}"]`);
       if(tab){
@@ -985,14 +740,14 @@
         tab.classList.add('recommended');
         switchPreview(rec);
         // Also highlight the matching JTBD pill
-        const pillMap={fax:0,signature:1,automate:2,engage:3,collect:4,api:5};
+        const pillMap={fax:0,automate:1,engage:2,signature:3};
         const pills=document.querySelectorAll('.jtbd-pill');
         pills.forEach(p=>p.classList.remove('selected'));
         if(pills[pillMap[rec]])pills[pillMap[rec]].classList.add('selected');
       }
     }
 
-    function selectMod(mod){S.mod=mod;S.path='sandbox';goToScreen(4);}
+    function selectMod(mod){S.mod=mod;S._s3mod=mod;S.path='sandbox';goToScreen(3);switchPreview(mod);}
 
     function directSetup(mod){
       S.mod=mod;S.path='direct';
@@ -1007,156 +762,85 @@
       if(sr){sr.classList.toggle('hidden',filled>=3);}
     }
 
+    function switchS4(mod){
+      S.mod=mod;
+      document.querySelectorAll('[data-s4-tab]').forEach(t=>t.classList.remove('active'));
+      const tab=document.querySelector('[data-s4-tab="'+mod+'"]');
+      if(tab)tab.classList.add('active');
+      const c=MC[mod]||MC.fax;
+      const vl=document.getElementById('video-label');
+      if(vl)vl.textContent=c.vl;
+    }
+
     function setupS4(){
       const c=MC[S.mod]||MC.fax;
       document.getElementById('sandbox-active').classList.remove('hidden');
       document.getElementById('sandbox-workemail').classList.add('hidden');
-      document.getElementById('sandbox-title').textContent=c.title;
-      document.getElementById('sandbox-subtitle').textContent=c.sub;
+      // Highlight the correct tab
+      document.querySelectorAll('[data-s4-tab]').forEach(t=>t.classList.remove('active'));
+      const tab=document.querySelector('[data-s4-tab="'+S.mod+'"]');
+      if(tab)tab.classList.add('active');
       document.getElementById('video-label').textContent=c.vl;
-      // Module-specific icon (no glow)
-      const icons={fax:'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',signature:'M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z',automate:'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15',engage:'M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z',collect:'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01',api:'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4'};
-      const ic=icons[S.mod]||icons.fax;
-      const colors={fax:'#0F6FDE',signature:'#7C3AED',automate:'#6366F1',engage:'#0F6FDE',collect:'#14B8A6',api:'#64748B'};
-      const col=colors[S.mod]||colors.fax;
-      const iconEl=document.getElementById('sandbox-icon');
-      iconEl.style.background=col+'15';
-      iconEl.innerHTML='<svg class="w-7 h-7" fill="none" stroke="'+col+'" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="'+ic+'"/></svg>';
-      // Hide all sandbox cards
-      ['sb-fax','sb-signature','sb-automate','sb-engage','sb-collect','sb-api'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.add('hidden');});
-      // Reset each sandbox: show skeleton, hide live, re-enable CTA, reset steps
-      ['fax','signature','automate','engage','collect','api'].forEach(mod=>{
-        const skeleton=document.getElementById('sb-'+mod+'-skeleton');
-        const live=document.getElementById('sb-'+mod+'-live');
-        const cta=document.getElementById('sb-'+mod+'-cta');
-        if(skeleton)skeleton.classList.remove('hidden');
-        if(live){live.classList.add('hidden');
-          // Reset step opacity and text
-          live.querySelectorAll('.sb-step').forEach(s=>{s.style.opacity='0.3';const d=s.querySelector('div');if(d){d.classList.remove('bg-purple-core');d.classList.add('bg-floating');}const svg=s.querySelector('svg');if(svg){svg.classList.remove('text-white','text-purple-core');svg.classList.add('text-text-muted');}const sp=s.querySelector('span:last-child');if(sp)sp.textContent='-';});
-        }
-        if(cta){cta.disabled=false;cta.classList.remove('opacity-50');}
-        // Reset card visibility
-        const cardIds={fax:'sb-fax-card',signature:'sb-sig-card',automate:'sb-auto-card',engage:'sb-eng-card',collect:'sb-col-card',api:'sb-api-card'};
-        const card=document.getElementById(cardIds[mod]);
-        if(card)card.classList.add('hidden');
-      });
-      // Reset CTA button text
-      const ctaTexts={fax:'Send Fax',signature:'Send for Signature',automate:'Run Automation',engage:'Send Message',collect:'Send Form',api:'Run API Call'};
-      const cta=document.getElementById('sb-'+S.mod+'-cta');
-      if(cta)cta.textContent=ctaTexts[S.mod]||'Send';
-      // Show the right form
-      document.getElementById(c.sb).classList.remove('hidden');
     }
 
-    // Randomization helpers for sandbox data
-    const _randNames=['Sarah Chen','Maria Garcia','James Wilson','Priya Patel','Robert Kim','Linda Nguyen','David Thompson','Aisha Johnson'];
-    const _randDobs=['03/15/1985','07/22/1978','11/03/1992','01/18/1965','09/27/1990','04/11/1983','12/05/1971','06/30/1988'];
-    const _randDrs=['Dr. Rajesh Patel','Dr. Emily Hartwell','Dr. Michael Torres','Dr. Susan Chang','Dr. Anthony Rivera'];
-    const _randDiag=['Suspected meniscal tear, right knee','Chronic lower back pain','Hypertension follow-up','Post-surgical evaluation','Cardiac arrhythmia workup'];
-    const _randIns=['Blue Shield PPO','Aetna HMO','United Healthcare','Cigna PPO','Medicare Part B'];
-    const _randInsId=['BSP-449821','AET-772103','UHC-338456','CIG-991247','MCR-556012'];
-    function _pick(arr){return arr[Math.floor(Math.random()*arr.length)];}
-    function _randFaxId(){return 'FX-2026-'+String(Math.floor(Math.random()*90000)+10000);}
-    function _randTime(){return (1.5+Math.random()*0.8).toFixed(1);}
-
-    function sbSend(mod){
-      // Disable the CTA button
-      const cta=document.getElementById('sb-'+mod+'-cta');
-      cta.disabled=true;
-      cta.textContent='Processing...';
-      cta.classList.add('opacity-50');
-      // Hide skeleton, show live result area
-      const skeleton=document.getElementById('sb-'+mod+'-skeleton');
-      const live=document.getElementById('sb-'+mod+'-live');
-      skeleton.classList.add('hidden');
-      live.classList.remove('hidden');
-      // Randomize total duration for variety
-      const totalBase=1.5+Math.random()*0.8;
-      // Animate the steps with stagger timing
-      const stepsContainerIds={fax:'sb-fax-steps',signature:'sb-sig-steps',automate:'sb-auto-steps',engage:'sb-eng-steps',collect:'sb-col-steps',api:'sb-api-steps'};
-      const progIds={fax:'sb-prog',signature:'sb-sig-prog',automate:'sb-auto-prog',engage:'sb-eng-prog',collect:'sb-col-prog',api:'sb-api-prog'};
-      const timerIds={fax:'sb-timer',signature:'sb-sig-timer',automate:'sb-auto-timer',engage:'sb-eng-timer',collect:'sb-col-timer',api:'sb-api-timer'};
-      const cardIds={fax:'sb-fax-card',signature:'sb-sig-card',automate:'sb-auto-card',engage:'sb-eng-card',collect:'sb-col-card',api:'sb-api-card'};
-      // Generate randomized step timings based on totalBase
-      function spreadTimings(count,total){const t=[0];for(let i=1;i<count;i++)t.push(+(total*i/(count)).toFixed(1));return t;}
-      const stepCounts={fax:4,signature:5,automate:5,engage:4,collect:5,api:4};
-      const timings={};Object.keys(stepCounts).forEach(k=>{timings[k]=spreadTimings(stepCounts[k],totalBase);});
-      const steps=document.getElementById(stepsContainerIds[mod]).querySelectorAll('.sb-step');
-      const prog=document.getElementById(progIds[mod]);
-      const timer=document.getElementById(timerIds[mod]);
-      const cardId=cardIds[mod];
-      const times=timings[mod]||timings.fax;
-      const total=totalBase;
-      let t=0,idx=0;
-      prog.style.width='0%';
-      const iv=setInterval(()=>{
-        t+=0.1;
-        prog.style.width=Math.min((t/total)*100,100)+'%';
-        timer.textContent=t.toFixed(1)+'s';
-        while(idx<times.length && t>=times[idx]){
-          const s=steps[idx];
-          if(s){
-            s.style.opacity='1';
-            s.querySelector('div').classList.remove('bg-floating');
-            s.querySelector('div').classList.add('bg-purple-core');
-            s.querySelector('svg').classList.remove('text-text-muted');
-            s.querySelector('svg').classList.add('text-white');
-            s.querySelector('span:last-child').textContent=times[idx].toFixed(1)+'s';
-          }
-          idx++;
-        }
-        if(t>=total){
-          clearInterval(iv);
-          timer.textContent=total.toFixed(1)+'s';
-          setTimeout(()=>{randomizeCardData(mod,total);document.getElementById(cardId).classList.remove('hidden');},300);
-        }
-      },100);
-    }
-
-    function randomizeCardData(mod,totalTime){
-      const card=document.getElementById({fax:'sb-fax-card',signature:'sb-sig-card',automate:'sb-auto-card',engage:'sb-eng-card',collect:'sb-col-card',api:'sb-api-card'}[mod]);
-      if(!card)return;
-      const name=_pick(_randNames),fid=_randFaxId(),ins=_pick(_randIns),insId=_pick(_randInsId),dr=_pick(_randDrs),dob=_pick(_randDobs),diag=_pick(_randDiag);
-      if(mod==='fax'){
-        const rows=card.querySelectorAll('.text-\\[10px\\].text-text-muted.font-mono');
-        rows.forEach(r=>{if(r.textContent.includes('FX-'))r.textContent=fid+' \u2022 3/3 pages \u2022 '+totalTime.toFixed(1)+'s';});
-      }
-      if(mod==='automate'){
-        const cells=card.querySelectorAll('.flex.justify-between');
-        cells.forEach(r=>{
-          const label=r.querySelector('.text-text-muted');
-          const val=r.querySelector('.text-text-primary, .font-medium');
-          if(!label||!val)return;
-          const l=label.textContent.trim();
-          if(l==='Patient')val.textContent=name;
-          else if(l==='DOB')val.textContent=dob;
-          else if(l==='Referring')val.textContent=dr+', St. James Hospital';
-          else if(l==='Diagnosis')val.textContent=diag;
-          else if(l==='Insurance')val.textContent=ins+' , '+insId;
-        });
-      }
-      if(mod==='collect'){
-        const cells=card.querySelectorAll('.flex.justify-between');
-        cells.forEach(r=>{
-          const label=r.querySelector('.text-text-muted');
-          const val=r.querySelector('.text-text-primary, .font-medium');
-          if(!label||!val)return;
-          const l=label.textContent.trim();
-          if(l==='Patient')val.textContent=name;
-          else if(l==='DOB')val.textContent=dob;
-          else if(l==='Insurance')val.innerHTML=ins+', Verified &#10003;, Copay: $'+Math.floor(Math.random()*4+1)*5;
-        });
-      }
-    }
+    function sbSend(mod){}
 
     function showWorkEmail(){
       S.triedMods.add(S.mod);
-      document.getElementById('sandbox-active').classList.add('hidden');
-      document.getElementById('sandbox-workemail').classList.remove('hidden');
-      // Show skip recovery if segmentation was incomplete (less than 3 fields filled)
-      const filled=Object.keys(S.seg).length;
-      const sr=document.getElementById('we-skip-recovery');
-      if(sr){sr.classList.toggle('hidden',filled>=3);}
+      goToScreen(6);
+    }
+
+    function handlePersonalIsWork(){
+      const cb=document.getElementById('personalIsWorkCb');
+      S.emailType=cb.checked?'work':'personal';
+    }
+
+    function setupProfiling(){
+      const isWork=S.emailType==='work';
+      // Get elements by ID for reliability
+      const s2=document.getElementById('screen-2');
+      const heading=s2.querySelector('h1');
+      const sub=s2.querySelector('h1~p');
+      const progressBar=document.getElementById('seg-inline-progress');
+      const progressLabel=document.getElementById('seg-progress-label');
+      const skipWrap=s2.querySelector('.text-center.mb-6');
+      const industryBlock=document.getElementById('seg-block-industry');
+      const roleBlock=document.getElementById('seg-role-section');
+      const sizeBlock=document.getElementById('seg-block-size');
+      const titleBlock=document.getElementById('seg-block-title');
+      const continueWrap=document.getElementById('seg-continue-wrap');
+
+      const hdyhauBlock=document.getElementById('seg-block-hdyhau');
+      if(isWork){
+        // Work email: show only Title + HDYHAU
+        if(heading)heading.textContent='Almost there';
+        if(sub)sub.textContent='Just your role level and how you found us';
+        if(progressBar)progressBar.style.display='none';
+        if(progressLabel)progressLabel.style.display='none';
+        if(skipWrap)skipWrap.style.display='none';
+        // Hide industry, role, size
+        if(industryBlock)industryBlock.style.display='none';
+        if(roleBlock)roleBlock.style.display='none';
+        if(sizeBlock)sizeBlock.style.display='none';
+        // Show title immediately
+        if(titleBlock){titleBlock.style.cssText='display:block;opacity:1;max-height:260px;margin-top:24px;overflow:visible;';}
+        // Show HDYHAU immediately
+        if(hdyhauBlock){hdyhauBlock.style.cssText='display:block;opacity:1;max-height:260px;margin-top:24px;overflow:visible;';}
+        // Hide continue until title answered
+        if(continueWrap)continueWrap.style.display='none';
+      } else {
+        // Personal email: show full cascade
+        if(heading)heading.textContent="Let's set up your experience";
+        if(sub)sub.textContent='A few quick taps to tailor everything to you';
+        if(progressBar)progressBar.style.display='';
+        if(progressLabel)progressLabel.style.display='';
+        if(skipWrap)skipWrap.style.display='';
+        if(industryBlock)industryBlock.style.display='';
+        if(roleBlock){roleBlock.style.display='';roleBlock.classList.remove('revealed');}
+        if(sizeBlock){sizeBlock.style.display='';sizeBlock.classList.remove('revealed');}
+        if(titleBlock){titleBlock.style.cssText='';titleBlock.classList.remove('revealed');}
+        if(continueWrap)continueWrap.style.display='';
+      }
     }
 
     function setupS5(){
@@ -1165,19 +849,19 @@
       document.getElementById('ns2t').textContent=steps[1].t;document.getElementById('ns2d').textContent=steps[1].d;
       document.getElementById('ns3t').textContent=steps[2].t;document.getElementById('ns3d').textContent=steps[2].d;
       // 4th card: suggest an untried module
-      const crossSell={fax:'signature',signature:'automate',automate:'engage',engage:'collect',collect:'fax',api:'automate'};
-      const crossNames={fax:'Fax',signature:'E-Signature',automate:'Automate',engage:'Engage',collect:'Collect',api:'API'};
+      const crossSell={fax:'signature',signature:'automate',automate:'engage',engage:'fax'};
+      const crossNames={fax:'eFax',signature:'eSign',automate:'Document Processing',engage:'Secure Communications'};
       let suggest=crossSell[m]||'signature';
       // Find first untried module
-      const allMods=['fax','signature','automate','engage','collect'];
+      const allMods=['fax','automate','engage','signature'];
       const untried=allMods.filter(x=>x!==m&&!S.triedMods.has(x));
       if(untried.length>0)suggest=untried[0];
       S._ns4mod=suggest;
       document.getElementById('ns4t').textContent='Try '+crossNames[suggest]+' next';
       document.getElementById('ns4d').textContent=untried.length>1?untried.length+' more modules to explore':'Complete your platform setup';
-      const pl=document.getElementById('plat-list'),mods=['Fax','E-Signature','Automate','Engage','Collect'],am={fax:'Fax',signature:'E-Signature',automate:'Automate',engage:'Engage',collect:'Collect',api:'Fax'},act=am[m]||'Fax';
-      const modKey={Fax:'fax','E-Signature':'signature',Automate:'automate',Engage:'engage',Collect:'collect'};
-      pl.innerHTML='';mods.forEach(x=>{const a=x===act;const mk=modKey[x]||'fax';const tried=S.triedMods.has(mk);let label,cls,rowCls,dotCls,nameCls;if(a){label='Active';cls='text-white text-[10px] font-semibold bg-purple-core px-2 py-0.5 rounded-full';rowCls='bg-purple-core/[0.07] border border-purple-core/20 rounded-xl';dotCls='w-3 h-3 rounded-full bg-purple-core';nameCls='text-sm font-semibold text-purple-core';}else if(tried){label='Tried &#10003;';cls='text-[10px] text-purple-core/60 font-medium';rowCls='rounded-lg hover:bg-base';dotCls='w-2.5 h-2.5 rounded-full bg-purple-core/40';nameCls='text-sm text-text-secondary font-medium';}else{label='Try it &rarr;';cls='text-[10px] text-text-muted';rowCls='rounded-lg hover:bg-base';dotCls='w-2.5 h-2.5 rounded-full bg-text-muted';nameCls='text-sm text-text-secondary';}pl.innerHTML+=`<div onclick="goToScreen(3);setTimeout(()=>switchPreview('${mk}'),100)" class="flex items-center gap-3 px-3 py-2.5 transition-colors duration-200 cursor-pointer group ${rowCls}"><div class="${dotCls}"></div><span class="${nameCls} group-hover:text-purple-core">${x}</span><span class="${cls} ml-auto">${label}</span></div>`;});
+      const pl=document.getElementById('plat-list'),mods=['eFax','Document Processing','Secure Communications','eSign'],am={fax:'eFax',signature:'eSign',automate:'Document Processing',engage:'Secure Communications'},act=am[m]||'eFax';
+      const modKey={'eFax':'fax','Document Processing':'automate','Secure Communications':'engage','eSign':'signature'};
+      pl.innerHTML='';mods.forEach(x=>{const a=x===act;const mk=modKey[x]||'fax';const tried=S.triedMods.has(mk);let label,cls,rowCls,nameCls;if(a){label='Active';cls='text-white text-[10px] font-semibold bg-white/20 px-2 py-0.5 rounded-full';rowCls='bg-purple-core rounded-xl';nameCls='text-sm font-semibold text-white';}else if(tried){label='Tried &#10003;';cls='text-[10px] text-purple-core/60 font-medium';rowCls='rounded-xl hover:bg-purple-core plat-row';nameCls='text-sm text-text-secondary font-medium';}else{label='';cls='text-[10px] text-text-muted';rowCls='rounded-xl hover:bg-purple-core plat-row';nameCls='text-sm text-text-secondary';}pl.innerHTML+=`<div onclick="goToScreen(3);setTimeout(()=>switchPreview('${mk}'),100)" class="flex items-center gap-3 px-3 py-2.5 transition-colors duration-200 cursor-pointer ${rowCls}"><span class="${nameCls}">${x}</span><span class="${cls} ml-auto">${label}</span></div>`;});
       // Show work email CTA for sandbox users, Quick Actions for direct users
       const weCta=document.getElementById('explore-workemail-cta');
       const qa=document.getElementById('explore-quick-actions');
@@ -1234,13 +918,22 @@
       if(v.length<8){showFieldError(input,'Password must be at least 8 characters');return false;}
       clearFieldError(input);return true;
     }
-    document.getElementById('nameInput').addEventListener('blur',validateName);
-    document.getElementById('emailInput').addEventListener('blur',validateEmail);
-    document.getElementById('passwordInput').addEventListener('blur',validatePassword);
+    const ni=document.getElementById('nameInput');if(ni)ni.addEventListener('blur',validateName);
+    const ei=document.getElementById('emailInput');if(ei)ei.addEventListener('blur',validateEmail);
+    const pi=document.getElementById('passwordInput');if(pi)pi.addEventListener('blur',validatePassword);
 
     function handleSignup(){
       const v1=validateName(),v2=validateEmail(),v3=validatePassword();
       if(!v1||!v2||!v3) return;
+      // Detect email type: work vs personal
+      const email=document.getElementById('emailInput').value.trim().toLowerCase();
+      const personalDomains=['gmail.com','yahoo.com','hotmail.com','outlook.com','aol.com','icloud.com','protonmail.com','mail.com','zoho.com','yandex.com','live.com','msn.com'];
+      const domain=email.split('@')[1]||'';
+      const isPersonalDomain=personalDomains.includes(domain);
+      const cb=document.getElementById('personalIsWorkCb');
+      if(!isPersonalDomain){S.emailType='work';}
+      else if(cb&&cb.checked){S.emailType='work';}
+      else{S.emailType='personal';}
       // Loading state
       const btn=document.getElementById('signupBtn');
       btn.disabled=true;btn.innerHTML='<svg class="animate-spin inline w-4 h-4 mr-2 -mt-0.5" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>Creating account...';
@@ -1251,7 +944,7 @@
         btn.innerHTML='<svg class="inline w-4 h-4 mr-2 -mt-0.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Welcome, '+name+'!';
         btn.style.opacity='1';
         setTimeout(()=>{
-          btn.disabled=false;btn.innerHTML='Get Started Free';
+          btn.disabled=false;btn.innerHTML='Create Account';
           goToScreen(2);
         },600);
       },800);
@@ -1259,7 +952,7 @@
 
     // === C4: State persistence ===
     function saveState(){
-      const data={screen:S.screen,mod:S.mod,seg:S.seg,triedMods:[...S.triedMods]};
+      const data={screen:S.screen,mod:S.mod,path:S.path,emailType:S.emailType,seg:S.seg,triedMods:[...S.triedMods]};
       try{sessionStorage.setItem('docflow_signup_state',JSON.stringify(data));}catch(e){}
     }
     function loadState(){
@@ -1267,13 +960,13 @@
         const raw=sessionStorage.getItem('docflow_signup_state');
         if(!raw) return false;
         const data=JSON.parse(raw);
-        S.screen=data.screen||1;S.mod=data.mod||'fax';S.seg=data.seg||{};
+        S.screen=data.screen||1;S.mod=data.mod||'fax';S.path=data.path||null;S.emailType=data.emailType||null;S.seg=data.seg||{};
         S.triedMods=new Set(data.triedMods||[]);
         return true;
       }catch(e){return false;}
     }
     window.addEventListener('beforeunload',function(e){
-      if(S.screen>=2&&S.screen<=4){e.preventDefault();e.returnValue='';}
+      if(S.screen>=2&&S.screen<=6){e.preventDefault();e.returnValue='';}
     });
 
     // Arrow key navigation for radiogroup pill containers
