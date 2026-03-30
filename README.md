@@ -30,7 +30,7 @@ Top-of-funnel conversion page demonstrating:
 **[Live demo](https://joleneann.github.io/healthcare-plg/signup-flow.html)**
 
 6-screen self-serve activation journey demonstrating:
-- **Screen 1 - Choose:** Routes users to recommended product module
+- **Screen 1 - Choose:** Routes users to chosen product module
 - **Screen 2 - Try:** Persistent product sidebar with sandbox + video layout per module
 - **Screen 3 - Sign Up:** Post-value email gate with SSO (Google/Microsoft) for enterprise detection
 - **Screen 4 - Profile:** Progressive 5-question segmentation (industry, role, team size, title, attribution) - all visible on one screen
