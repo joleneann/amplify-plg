@@ -18,11 +18,12 @@ The north-star metric throughout: **Revenue per Visitor** (conversion rate × AC
 **[Live demo](https://joleneann.github.io/healthcare-plg/)**
 
 Top-of-funnel conversion page demonstrating:
-- Role-based segmentation and progressive disclosure
-- JTBD-aligned tabbed product demos (Fax / Automate / Engage / Collect)
-- Workflow pipeline visualization as hero concept
-- Social proof architecture (G2 data, customer logos, testimonials)
-- Persistent, context-aware CTAs across scroll depth
+- Tabbed platform demos with live UI previews (Fax / Automate / Engage / Collect)
+- Animated workflow pipeline: Received → Classified → Routed → Actioned → Archived
+- Competitor comparison grid positioning Docflow's unified flow vs. point solutions
+- G2 social proof, customer logos, and testimonials threaded as proof breaks
+- Role-targeted value props for Ops, Compliance, IT, and Front Desk
+- Dual conversion paths (free trial + demo) with persistent email capture
 
 ### 2. Onboarding Flow (Signup → Activation)
 **[Live demo](https://joleneann.github.io/healthcare-plg/signup-flow.html)**
