@@ -158,19 +158,19 @@
             <span class="step-label">Choose</span>
           </div>
           <svg class="step-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <div class="step-item" onclick="goToScreen(4)" data-step="2">
+          <div class="step-item" onclick="goToScreen(2)" data-step="2">
             <div class="step-circle">2</div>
+            <span class="step-label">Profile</span>
+          </div>
+          <svg class="step-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="step-item" onclick="goToScreen(4)" data-step="3">
+            <div class="step-circle">3</div>
             <span class="step-label">Try</span>
           </div>
           <svg class="step-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <div class="step-item" onclick="goToScreen(6)" data-step="3">
-            <div class="step-circle">3</div>
-            <span class="step-label">Sign Up</span>
-          </div>
-          <svg class="step-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <div class="step-item" onclick="goToScreen(2)" data-step="4">
+          <div class="step-item" onclick="goToScreen(6)" data-step="4">
             <div class="step-circle">4</div>
-            <span class="step-label">Profile</span>
+            <span class="step-label">Sign Up</span>
           </div>
           <svg class="step-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <div class="step-item" onclick="goToScreen(5)" data-step="5">
@@ -197,32 +197,32 @@
         <style>.cap-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;}.cap-card{display:grid;grid-template-rows:subgrid;grid-row:span 3;min-width:0;}</style>
         <div class="cap-grid mb-6 max-w-[1100px] mx-auto" style="grid-template-rows:auto auto auto;">
           <!-- eFax -->
-          <button onclick="S.mod='fax';S.path='direct';goToScreen(4)" class="cap-card group rounded-2xl border border-border px-4 py-8 text-center bg-white hover:bg-purple-core hover:border-purple-core transition-colors duration-200 cursor-pointer">
+          <button onclick="S.mod='fax';S.path='direct';goToScreen(2)" class="cap-card group rounded-2xl border border-border px-4 py-8 text-center bg-white hover:bg-purple-core hover:border-purple-core transition-colors duration-200 cursor-pointer">
             <div class="flex justify-center"><div class="w-14 h-14 rounded-2xl bg-purple-core group-hover:bg-white flex items-center justify-center transition-colors duration-200"><svg class="w-7 h-7 text-white group-hover:text-purple-core transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div></div>
             <h3 class="font-display text-sm font-semibold text-text-primary group-hover:text-white transition-colors duration-200 mt-4 self-center">eFax</h3>
             <p class="text-xs text-text-secondary group-hover:text-white/80 leading-relaxed transition-colors duration-200 mt-1 self-start">Send, receive, and route digital faxes</p>
           </button>
           <!-- Document Processing -->
-          <button onclick="S.mod='automate';S.path='direct';goToScreen(4)" class="cap-card group rounded-2xl border border-border px-4 py-8 text-center bg-white hover:bg-purple-core hover:border-purple-core transition-colors duration-200 cursor-pointer">
+          <button onclick="S.mod='automate';S.path='direct';goToScreen(2)" class="cap-card group rounded-2xl border border-border px-4 py-8 text-center bg-white hover:bg-purple-core hover:border-purple-core transition-colors duration-200 cursor-pointer">
             <div class="flex justify-center"><div class="w-14 h-14 rounded-2xl bg-purple-core group-hover:bg-white flex items-center justify-center transition-colors duration-200"><svg class="w-7 h-7 text-white group-hover:text-purple-core transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg></div></div>
             <h3 class="font-display text-sm font-semibold text-text-primary group-hover:text-white transition-colors duration-200 mt-4 self-center">Document Processing</h3>
             <p class="text-xs text-text-secondary group-hover:text-white/80 leading-relaxed transition-colors duration-200 mt-1 self-start">AI classifies and routes documents</p>
           </button>
           <!-- Secure Communications -->
-          <button onclick="S.mod='engage';S.path='direct';goToScreen(4)" class="cap-card group rounded-2xl border border-border px-4 py-8 text-center bg-white hover:bg-purple-core hover:border-purple-core transition-colors duration-200 cursor-pointer">
+          <button onclick="S.mod='engage';S.path='direct';goToScreen(2)" class="cap-card group rounded-2xl border border-border px-4 py-8 text-center bg-white hover:bg-purple-core hover:border-purple-core transition-colors duration-200 cursor-pointer">
             <div class="flex justify-center"><div class="w-14 h-14 rounded-2xl bg-purple-core group-hover:bg-white flex items-center justify-center transition-colors duration-200"><svg class="w-7 h-7 text-white group-hover:text-purple-core transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg></div></div>
             <h3 class="font-display text-sm font-semibold text-text-primary group-hover:text-white transition-colors duration-200 mt-4 self-center">Secure Communications</h3>
             <p class="text-xs text-text-secondary group-hover:text-white/80 leading-relaxed transition-colors duration-200 mt-1 self-start">Encrypted messaging with audit trails</p>
           </button>
           <!-- eSign -->
-          <button onclick="S.mod='signature';S.path='direct';goToScreen(4)" class="cap-card group rounded-2xl border border-border px-4 py-8 text-center bg-white hover:bg-purple-core hover:border-purple-core transition-colors duration-200 cursor-pointer">
+          <button onclick="S.mod='signature';S.path='direct';goToScreen(2)" class="cap-card group rounded-2xl border border-border px-4 py-8 text-center bg-white hover:bg-purple-core hover:border-purple-core transition-colors duration-200 cursor-pointer">
             <div class="flex justify-center"><div class="w-14 h-14 rounded-2xl bg-purple-core group-hover:bg-white flex items-center justify-center transition-colors duration-200"><svg class="w-7 h-7 text-white group-hover:text-purple-core transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg></div></div>
             <h3 class="font-display text-sm font-semibold text-text-primary group-hover:text-white transition-colors duration-200 mt-4 self-center">eSign</h3>
             <p class="text-xs text-text-secondary group-hover:text-white/80 leading-relaxed transition-colors duration-200 mt-1 self-start">Digital signatures and form collection</p>
           </button>
         </div>
 
-        <p class="text-center mt-2"><a onclick="S.path='explore';S.mod='fax';goToScreen(4)" class="text-sm text-purple-core underline hover:opacity-80 cursor-pointer transition-opacity duration-200">or explore the platform first</a></p>
+        <p class="text-center mt-2"><a onclick="S.path='explore';S.mod='fax';goToScreen(2)" class="text-sm text-purple-core underline hover:opacity-80 cursor-pointer transition-opacity duration-200">or explore the platform first</a></p>
 
         <div class="flex items-center justify-center gap-1.5 mt-8 text-xs font-medium text-text-muted">
           <span class="flex items-center gap-1.5">
@@ -264,7 +264,7 @@
         </div>
 
         <div class="text-center mb-2">
-          <button onclick="goToScreen(5)" class="text-xs text-text-muted hover:text-text-secondary transition-colors duration-200">Skip for now</button>
+          <button onclick="goToScreen(4)" class="text-xs text-text-muted hover:text-text-secondary transition-colors duration-200">Skip for now</button>
         </div>
 
         <!-- Q1: Industry (always visible) -->
@@ -328,10 +328,10 @@
 
         <!-- Continue button -->
         <div id="seg-continue-wrap" class="mt-4">
-          <button onclick="goToScreen(5)" class="btn-shimmer w-full px-6 py-3 rounded-xl bg-purple-core text-white text-sm font-semibold active:scale-[0.97]" style="box-shadow:0 4px 16px rgba(15,111,222,0.4);">Go to my dashboard</button>
+          <button onclick="goToScreen(4)" class="btn-shimmer w-full px-6 py-3 rounded-xl bg-purple-core text-white text-sm font-semibold active:scale-[0.97]" style="box-shadow:0 4px 16px rgba(15,111,222,0.4);">Try it now &rarr;</button>
         </div>
 
-        <div class="strategy-tip mt-4"><div class="tip-content"><div class="tip-label">PLG Strategy: Segmentation</div><p><strong>Progressive reveal</strong> shows one question at a time as pills. Research: multi-step/cascading flows convert 86% higher (HubSpot) and reduce completion time by 20-40% (NNGroup). <strong>Industry + Role</strong> power module recommendation. <strong>Company size + Title</strong> power PQL scoring. <strong>"How did you find us?"</strong> kept in the main cascade as Q5 to close the attribution loop for marketing ROI.</p></div></div>
+        <div class="strategy-tip mt-4"><div class="tip-content"><div class="tip-label">PLG Strategy: Good Friction</div><p><strong>Profiling before sandbox is intentional.</strong> Counterintuitively, adding "good friction" early outperforms minimizing time-to-value. Anthropic's onboarding asks who you are and what your interests are before product access - critics call the flow long, but the data supports it. Profiling here serves two purposes: (1) the sandbox experience is tailored by industry + role signals, creating stronger psychological ownership, and (2) users who self-select feel the product is "for them" before they touch it. <strong>Progressive reveal</strong> shows one question at a time as pills. Research: cascading flows convert 86% higher (HubSpot). <strong>Industry + Role</strong> power module recommendation. <strong>Company size + Title</strong> power PQL scoring.</p></div></div>
       </div>
     </div>
 
@@ -473,7 +473,7 @@
         </div>
         <p class="text-center text-xs text-text-muted mt-2">Enterprise? <a href="#" class="text-purple-core hover:opacity-80">Talk to our team</a></p>
       </div>
-      <div class="strategy-tip max-w-[420px] mx-auto mt-5"><div class="tip-content"><div class="tip-label">PLG Strategy: Post-Value Email Gate</div><p><strong>Email is asked after sandbox activation</strong>, not before. The user has already experienced value, so conversion is 3x higher. <strong>SSO buttons</strong> (Google/Microsoft) serve dual purpose: convenience + enterprise detection. A @largeclinic.org Microsoft login is a PQL signal. Personal email is accepted with a smaller cap. <strong>Email type detection</strong> powers conditional profiling on the next screen.</p></div></div>
+      <div class="strategy-tip max-w-[420px] mx-auto mt-5"><div class="tip-content"><div class="tip-label">PLG Strategy: Post-Value Email Gate</div><p><strong>Email is asked after profiling + sandbox activation</strong>, not before. The user has self-identified (profiling) and experienced value (sandbox), so the ask feels earned - conversion is 3x higher than upfront gates. <strong>SSO buttons</strong> (Google/Microsoft) serve dual purpose: convenience + enterprise detection. A @largeclinic.org Microsoft login is a PQL signal. Personal email is accepted with a smaller cap. <strong>Email type detection</strong> determines whether to show a shortened profiling revisit on the dashboard.</p></div></div>
     </div>
   </div>
 
@@ -483,8 +483,8 @@
     const MC={fax:{title:'Send a fax in seconds',sub:"See how fast document delivery can be. This is your sandbox, nothing real is sent.",sb:'sb-fax',vl:'Send a fax in under 2 seconds',deep:true},signature:{title:'Collect a signature in seconds',sub:"See how fast you can get documents signed. Sandbox mode, no real emails sent.",sb:'sb-signature',vl:'Collect signatures in minutes',deep:true},automate:{title:'Watch AI process a document',sub:'See how Docflow reads, classifies, and routes documents automatically.',sb:'sb-automate',vl:'AI processes documents in seconds',deep:true},api:{title:'Make your first API call',sub:'Test the Docflow API with real responses. Sandbox mode, no production data affected.',sb:'sb-api',vl:'Your first API call in 60 seconds',deep:true},engage:{title:'Send a secure message',sub:'See how secure messaging replaces phone tag. Sandbox mode, no real messages sent.',sb:'sb-engage',vl:'Replace phone tag with secure messaging',deep:true},collect:{title:'Build a patient intake form',sub:'See how patients complete forms on their phones before they arrive.',sb:'sb-collect',vl:'Patient intake, before they arrive',deep:true}};
     const NS={fax:[{t:'Set up number porting',d:'Transfer your existing fax number to Docflow'},{t:'Configure document workflows',d:'Set up routing, classification, and triggers'},{t:'Invite your team',d:'Teams that collaborate retain 2.5x better'}],signature:[{t:'Create a signing template',d:'Build reusable templates for common documents'},{t:'Set up signing workflows',d:'Automate multi-party signing with reminders'},{t:'Invite your team',d:'Enable your team to send signature requests'}],automate:[{t:'Connect your fax inbox',d:'Auto-process every incoming fax with AI'},{t:'Create custom extraction rules',d:'Define the fields AI should pull from your documents'},{t:'Set up routing rules',d:'Route documents to the right team automatically'}],engage:[{t:'Add your team contacts',d:'Import providers, nurses, and staff into secure messaging'},{t:'Set up patient messaging',d:'Enable two-way SMS with patients'},{t:'Configure escalation rules',d:'Auto-escalate unanswered messages after 15 minutes'}],collect:[{t:'Customize your intake form',d:'Add your practice logo, fields, and consent language'},{t:'Connect insurance verification',d:'Auto-verify patient coverage in real-time'},{t:'Set up appointment reminders',d:'Send SMS reminders with form links before visits'}],api:[{t:'Set up webhooks',d:'Get real-time notifications on fax delivery events'},{t:'Configure audit logs',d:'HIPAA-compliant logging for every API call'},{t:'Explore batch API',d:'High-volume fax processing endpoint'}],default:[{t:'Explore templates',d:'Browse pre-built templates for your industry'},{t:'Set up team workspace',d:'Organize and invite collaborators'},{t:'Connect integrations',d:'Link Docflow to your existing tools'}]};
 
-    // Map screen IDs to stepper steps: Choose(1)→Try(2)→SignUp(3)→Profile(4)→Dashboard(5)
-    const screenToStep={1:1, 2:4, 4:2, 5:5, 6:3};
+    // Map screen IDs to stepper steps: Choose(1)→Profile(2)→Try(3)→SignUp(4)→Dashboard(5)
+    const screenToStep={1:1, 2:2, 4:3, 5:5, 6:4};
 
     function goToScreen(n){
       S.screen=n;
@@ -954,7 +954,7 @@
         btn.style.opacity='1';
         setTimeout(()=>{
           btn.disabled=false;btn.innerHTML='Create Account';
-          goToScreen(2);
+          goToScreen(5);
         },600);
       },800);
     }
