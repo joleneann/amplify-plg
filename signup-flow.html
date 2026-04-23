@@ -10,10 +10,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <style>
   </style>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config={theme:{extend:{colors:{base:'#F5F7FA',elevated:'#FFFFFF',floating:'#E8EDF4',border:'rgba(180,190,210,0.35)','purple-core':'#0F6FDE','purple-light':'#5BA3F5','purple-glow':'rgba(15,111,222,0.2)','purple-subtle':'rgba(15,111,222,0.06)','text-primary':'#0B0F1A','text-secondary':'#4A5578','text-muted':'#8B95B0'},fontFamily:{display:['"Plus Jakarta Sans"','system-ui','sans-serif'],body:['"Inter"','system-ui','sans-serif'],mono:['"JetBrains Mono"','monospace']}}}};
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --color-base: #F5F7FA;
+      --color-elevated: #FFFFFF;
+      --color-floating: #E8EDF4;
+      --color-border: rgba(180,190,210,0.35);
+      --color-purple-core: #0F6FDE;
+      --color-purple-light: #5BA3F5;
+      --color-purple-glow: rgba(15,111,222,0.2);
+      --color-purple-subtle: rgba(15,111,222,0.06);
+      --color-text-primary: #0B0F1A;
+      --color-text-secondary: #4A5578;
+      --color-text-muted: #8B95B0;
+      --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
+      --font-body: "Inter", system-ui, sans-serif;
+      --font-mono: "JetBrains Mono", monospace;
+    }
+    @layer base {
+      *, ::before, ::after { border-color: rgba(180, 190, 210, 0.35); }
+    }
+  </style>
   <style>
     *{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;}
     body{background:#F5F7FA;background-image:radial-gradient(ellipse 80% 60% at 8% 0%,rgba(15,111,222,0.08) 0%,transparent 50%),radial-gradient(ellipse 50% 50% at 92% 85%,rgba(15,111,222,0.06) 0%,transparent 50%),radial-gradient(ellipse 70% 50% at 50% 40%,rgba(91,163,245,0.035) 0%,transparent 55%);background-attachment:fixed;}
